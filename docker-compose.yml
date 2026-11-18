@@ -1,0 +1,40 @@
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: learnflow_db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: adminpassword
+      POSTGRES_DB: learnflow_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build: ./backend
+    container_name: learnflow_api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+    environment:
+      - DATABASE_URL=postgresql://admin:adminpassword@db:5432/learnflow_db
+    depends_on:
+      - db
+
+  frontend:
+    build: ./frontend
+    container_name: learnflow_web
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
