@@ -36,3 +36,19 @@ def get_current_user(
     if user is None or not user.is_active:
         raise unauthorized
     return user
+
+def require_role(*allowed_roles: str):
+    """
+    Dépendance qui autorise seulement certains rôles.
+    Exemple : @router.get("/admin/users", dependencies=[Depends(require_role("admin"))])
+    """
+
+    def role_checker(current_user: User = Depends(get_current_user)) -> User:
+        if current_user.role.name not in allowed_roles:
+            raise HTTPException(
+                status_code=status.HTTP_403_FORBIDDEN,
+                detail="Accès refusé : vous n'avez pas les droits nécessaires.",
+            )
+        return current_user
+
+    return role_checker

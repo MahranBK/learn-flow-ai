@@ -20,8 +20,8 @@ export default function DashboardPage() {
 
 async function UserPanel() {
   const user = await getCurrentUser();
-  if (!user) redirect("/login"); // pas de session ou session expirée
-
+  if (!user) redirect("/login?expired=1"); // session refusée par l'API → le proxy supprime le cookie
+  
   return (
     <div className="rounded-2xl bg-white p-8 shadow-sm ring-1 ring-black/5 dark:bg-zinc-900 dark:ring-white/10">
       <h1 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-50">
