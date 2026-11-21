@@ -1,5 +1,9 @@
 "use server";
 
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
+import { SESSION_COOKIE } from "@/lib/session";
+
 import { API_URL } from "@/lib/api";
 
 type Field = "full_name" | "email" | "password" | "confirm_password";
@@ -74,4 +78,59 @@ export async function register(
     return { errors: apiErrors, values };
   }
   return { message: "Une erreur est survenue. Réessayez.", values };
+}
+
+export type LoginState = {
+  message?: string;
+  errors?: { email?: string; password?: string };
+  values?: { email: string };
+};
+
+export async function login(_prevState: LoginState, formData: FormData): Promise<LoginState> {
+  const email = String(formData.get("email") ?? "").trim();
+  const password = String(formData.get("password") ?? "");
+  const values = { email };
+
+  // 1. Validation
+  const errors: LoginState["errors"] = {};
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.email = "Adresse email invalide.";
+  if (!password) errors.password = "Veuillez saisir votre mot de passe.";
+  if (Object.keys(errors).length > 0) return { errors, values };
+
+  // 2. Appel à l'API
+  let res: Response;
+  try {
+    res = await fetch(`${API_URL}/auth/login`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+      cache: "no-store",
+    });
+  } catch {
+    return { message: "Impossible de joindre le serveur. Réessayez plus tard.", values };
+  }
+
+  const data = await res.json().catch(() => null);
+
+  // 3. Erreurs (401 mauvais identifiants, 403 compte désactivé)
+  if (!res.ok) {
+    const detail = typeof data?.detail === "string" ? data.detail : "Connexion impossible.";
+    return { message: detail, values };
+  }
+
+  // 4. Succès : on stocke le JWT dans un cookie httpOnly
+  (await cookies()).set(SESSION_COOKIE, data.access_token, {
+    httpOnly: true, // inaccessible au JavaScript du navigateur (protection XSS)
+    secure: process.env.NODE_ENV === "production", // HTTPS uniquement en production
+    sameSite: "lax", // protection CSRF
+    path: "/",
+    maxAge: data.expires_in, // le cookie expire en même temps que le JWT
+  });
+
+  redirect("/dashboard"); // ⚠️ jamais dans un try/catch : redirect() fonctionne en lançant une exception
+}
+
+export async function logout() {
+  (await cookies()).delete(SESSION_COOKIE);
+  redirect("/login");
 }
