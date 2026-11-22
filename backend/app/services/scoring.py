@@ -107,6 +107,9 @@ def mastery_from_score(score: float, n_questions: int) -> MasteryLevel:
         return MasteryLevel.PARTIAL
     return MasteryLevel.GAP
 
+def is_reliable(unanswered_count: int, total_questions: int) -> bool:
+    """Un résultat est fiable si au plus la moitié des questions sont restées sans réponse."""
+    return total_questions > 0 and unanswered_count / total_questions <= MAX_UNANSWERED_RATIO
 
 def compute_result(outcomes: list[QuestionOutcome]) -> ScoringResult:
     """Calcule le score global, le niveau et le détail par compétence."""
@@ -140,6 +143,6 @@ def compute_result(outcomes: list[QuestionOutcome]) -> ScoringResult:
         correct_count=sum(o.correct for o in outcomes),
         total_questions=len(outcomes),
         unanswered_count=unanswered,
-        reliable=unanswered / len(outcomes) <= MAX_UNANSWERED_RATIO,
+        reliable=is_reliable(unanswered, len(outcomes)),
         skills=skills,
     )

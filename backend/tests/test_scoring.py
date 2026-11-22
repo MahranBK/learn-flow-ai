@@ -139,3 +139,16 @@ def test_donnees_incoherentes_refusees():
         QuestionOutcome(1, 5, True, True)  # difficulté inconnue
     with pytest.raises(ValueError):
         QuestionOutcome(1, 1, False, True)  # correcte sans avoir répondu
+
+
+# --- is_reliable ----------------------------------------------------------------------------
+
+
+@pytest.mark.parametrize(
+    ("unanswered", "total", "expected"),
+    [(0, 16, True), (8, 16, True), (9, 16, False), (16, 16, False), (0, 0, False)],
+)
+def test_is_reliable(unanswered, total, expected):
+    from app.services.scoring import is_reliable
+
+    assert is_reliable(unanswered, total) is expected
