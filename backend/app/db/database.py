@@ -3,6 +3,7 @@ from sqlalchemy.orm import DeclarativeBase, Session, sessionmaker
 
 from app.core.config import DATABASE_URL
 
+
 # SQLite (tests) a besoin de check_same_thread=False
 connect_args = {"check_same_thread": False} if DATABASE_URL.startswith("sqlite") else {}
 
@@ -32,7 +33,7 @@ DEFAULT_ROLES = {
 def init_db() -> None:
     """Crée les tables et insère les rôles par défaut s'ils n'existent pas."""
     from app.models import Role  # importe tous les modèles via models/__init__.py
-
+    from app.db.seed import seed_catalog  # import local : seed.py importe les modèles
     Base.metadata.create_all(bind=engine)
 
     with Session(engine) as db:
@@ -40,4 +41,5 @@ def init_db() -> None:
         for name, description in DEFAULT_ROLES.items():
             if name not in existing:
                 db.add(Role(name=name, description=description))
+        seed_catalog(db)# cours et compétences par défaut
         db.commit()
