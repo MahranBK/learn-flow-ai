@@ -33,7 +33,8 @@ DEFAULT_ROLES = {
 def init_db() -> None:
     """Crée les tables et insère les rôles par défaut s'ils n'existent pas."""
     from app.models import Role  # importe tous les modèles via models/__init__.py
-    from app.db.seed import seed_catalog  # import local : seed.py importe les modèles
+    from app.db.seed import seed_catalog , seed_question_bank # import local : seed.py importe les modèles
+    from app.db.seed import seed_catalog, seed_question_bank  # import local : seed.py importe les modèles
     Base.metadata.create_all(bind=engine)
 
     with Session(engine) as db:
@@ -42,4 +43,5 @@ def init_db() -> None:
             if name not in existing:
                 db.add(Role(name=name, description=description))
         seed_catalog(db)# cours et compétences par défaut
+        seed_question_bank(db)  # banque de questions de secours
         db.commit()

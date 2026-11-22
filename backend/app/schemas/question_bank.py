@@ -38,3 +38,11 @@ class QuestionDraft(BaseModel):
         if self.correct_answer not in self.options:
             raise ValueError("La bonne réponse doit faire partie des options.")
         return self
+
+        
+
+class SeedQuestion(QuestionDraft):
+    """Question du fichier de secours : une QuestionDraft + le cours et la compétence visés."""
+
+    course: str = Field(min_length=1, max_length=50)  # code du cours, ex. "python-basics"
+    skill: str = Field(min_length=1, max_length=50)  # code de la compétence, ex. "loops"

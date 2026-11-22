@@ -1,0 +1,394 @@
+[
+  {
+    "course": "python-basics",
+    "skill": "variables-types",
+    "difficulty": 1,
+    "question": "Quel est le type de la valeur 3.14 en Python ?",
+    "options": [
+      "int",
+      "float",
+      "str",
+      "bool"
+    ],
+    "correct_answer": "float",
+    "explanation": "Un nombre avec une partie décimale est de type float."
+  },
+  {
+    "course": "python-basics",
+    "skill": "variables-types",
+    "difficulty": 1,
+    "question": "Quelle instruction affecte la valeur 10 à la variable age ?",
+    "options": [
+      "age = 10",
+      "int age = 10",
+      "let age = 10",
+      "age <- 10"
+    ],
+    "correct_answer": "age = 10",
+    "explanation": "En Python on affecte avec le signe = , sans déclarer de type."
+  },
+  {
+    "course": "python-basics",
+    "skill": "variables-types",
+    "difficulty": 2,
+    "question": "Quel est le résultat de '5' + '3' ?",
+    "options": [
+      "'53'",
+      "8",
+      "Une erreur TypeError",
+      "'8'"
+    ],
+    "correct_answer": "'53'",
+    "explanation": "Avec des chaînes de caractères, + concatène : on obtient '53'."
+  },
+  {
+    "course": "python-basics",
+    "skill": "variables-types",
+    "difficulty": 2,
+    "question": "Quelle est la valeur de 7 // 2 ?",
+    "options": [
+      "3",
+      "3.5",
+      "4",
+      "2"
+    ],
+    "correct_answer": "3",
+    "explanation": "// est la division entière : 7 // 2 vaut 3."
+  },
+  {
+    "course": "python-basics",
+    "skill": "variables-types",
+    "difficulty": 2,
+    "question": "Que renvoie bool('') (bool d'une chaîne vide) ?",
+    "options": [
+      "True",
+      "False",
+      "None",
+      "Une erreur"
+    ],
+    "correct_answer": "False",
+    "explanation": "Une chaîne vide est considérée comme fausse ; toute chaîne non vide est vraie."
+  },
+  {
+    "course": "python-basics",
+    "skill": "variables-types",
+    "difficulty": 3,
+    "question": "Que renvoie l'expression 0.1 + 0.2 == 0.3 ?",
+    "options": [
+      "True",
+      "False",
+      "Une erreur",
+      "None"
+    ],
+    "correct_answer": "False",
+    "explanation": "Les flottants sont stockés en binaire : 0.1 + 0.2 vaut 0.30000000000000004."
+  },
+  {
+    "course": "python-basics",
+    "skill": "variables-types",
+    "difficulty": 3,
+    "question": "Après a = [1, 2] puis b = a puis b.append(3), que vaut a ?",
+    "options": [
+      "[1, 2]",
+      "[1, 2, 3]",
+      "[3]",
+      "Une erreur"
+    ],
+    "correct_answer": "[1, 2, 3]",
+    "explanation": "b et a désignent la même liste : modifier b modifie aussi a."
+  },
+  {
+    "course": "python-basics",
+    "skill": "conditions",
+    "difficulty": 1,
+    "question": "Quel mot-clé permet d'écrire une condition en Python ?",
+    "options": [
+      "if",
+      "when",
+      "switch",
+      "check"
+    ],
+    "correct_answer": "if",
+    "explanation": "Une condition commence par if (puis éventuellement elif et else)."
+  },
+  {
+    "course": "python-basics",
+    "skill": "conditions",
+    "difficulty": 1,
+    "question": "Quel opérateur teste l'égalité de deux valeurs ?",
+    "options": [
+      "==",
+      "=",
+      "===",
+      "equals"
+    ],
+    "correct_answer": "==",
+    "explanation": "= affecte une valeur, == compare deux valeurs."
+  },
+  {
+    "course": "python-basics",
+    "skill": "conditions",
+    "difficulty": 2,
+    "question": "Que renvoie l'expression 5 > 3 and 2 > 4 ?",
+    "options": [
+      "True",
+      "False",
+      "None",
+      "Une erreur"
+    ],
+    "correct_answer": "False",
+    "explanation": "and exige que les deux comparaisons soient vraies ; 2 > 4 est faux."
+  },
+  {
+    "course": "python-basics",
+    "skill": "conditions",
+    "difficulty": 2,
+    "question": "Que s'affiche avec ce code ?\nx = 15\nif x > 10:\n    print('A')\nelif x > 5:\n    print('B')\nelse:\n    print('C')",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "A puis B"
+    ],
+    "correct_answer": "A",
+    "explanation": "Dès qu'une condition est vraie, les suivantes (elif, else) sont ignorées."
+  },
+  {
+    "course": "python-basics",
+    "skill": "conditions",
+    "difficulty": 2,
+    "question": "Laquelle de ces valeurs est considérée comme fausse dans une condition ?",
+    "options": [
+      "0",
+      "'0'",
+      "[0]",
+      "' '"
+    ],
+    "correct_answer": "0",
+    "explanation": "Le nombre 0 est faux ; la chaîne '0', la liste [0] et ' ' sont non vides donc vraies."
+  },
+  {
+    "course": "python-basics",
+    "skill": "conditions",
+    "difficulty": 3,
+    "question": "Que renvoie l'expression not (True or False) and True ?",
+    "options": [
+      "True",
+      "False",
+      "None",
+      "Une erreur"
+    ],
+    "correct_answer": "False",
+    "explanation": "True or False vaut True ; not True vaut False ; False and True vaut False."
+  },
+  {
+    "course": "python-basics",
+    "skill": "conditions",
+    "difficulty": 3,
+    "question": "Que s'affiche avec ce code ?\nx = None\nif x:\n    print('A')\nelif x is None:\n    print('B')\nelse:\n    print('C')",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "Rien"
+    ],
+    "correct_answer": "B",
+    "explanation": "None est faux, donc le premier if est ignoré ; x is None est vrai, donc B s'affiche."
+  },
+  {
+    "course": "python-basics",
+    "skill": "loops",
+    "difficulty": 1,
+    "question": "Quelle boucle permet de parcourir les éléments d'une liste ?",
+    "options": [
+      "for",
+      "if",
+      "def",
+      "try"
+    ],
+    "correct_answer": "for",
+    "explanation": "for élément in liste: parcourt chaque élément de la liste."
+  },
+  {
+    "course": "python-basics",
+    "skill": "loops",
+    "difficulty": 1,
+    "question": "Que s'affiche avec for i in range(3): print(i) ?",
+    "options": [
+      "Les nombres 0, 1 et 2",
+      "Les nombres 1, 2 et 3",
+      "Les nombres 0, 1, 2 et 3",
+      "Les nombres 1 et 2"
+    ],
+    "correct_answer": "Les nombres 0, 1 et 2",
+    "explanation": "range(3) produit 0, 1, 2 : la borne de fin est exclue."
+  },
+  {
+    "course": "python-basics",
+    "skill": "loops",
+    "difficulty": 2,
+    "question": "Combien de fois s'exécute le corps de for i in range(2, 10, 2) ?",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "8"
+    ],
+    "correct_answer": "4",
+    "explanation": "i prend les valeurs 2, 4, 6 et 8 : quatre tours."
+  },
+  {
+    "course": "python-basics",
+    "skill": "loops",
+    "difficulty": 2,
+    "question": "Quel mot-clé arrête immédiatement une boucle ?",
+    "options": [
+      "continue",
+      "break",
+      "pass",
+      "exit"
+    ],
+    "correct_answer": "break",
+    "explanation": "break sort de la boucle ; continue passe seulement au tour suivant."
+  },
+  {
+    "course": "python-basics",
+    "skill": "loops",
+    "difficulty": 2,
+    "question": "Que vaut s à la fin de ce code ?\ns = 0\nfor i in range(1, 4):\n    s += i",
+    "options": [
+      "3",
+      "6",
+      "10",
+      "4"
+    ],
+    "correct_answer": "6",
+    "explanation": "s = 1 + 2 + 3 = 6 (range(1, 4) donne 1, 2, 3)."
+  },
+  {
+    "course": "python-basics",
+    "skill": "loops",
+    "difficulty": 3,
+    "question": "Que vaut n à la fin de ce code ?\nn = 0\nwhile n < 5:\n    n += 2",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "4"
+    ],
+    "correct_answer": "6",
+    "explanation": "n passe par 0, 2, 4 puis 6 ; à 6 la condition n < 5 est fausse et la boucle s'arrête."
+  },
+  {
+    "course": "python-basics",
+    "skill": "loops",
+    "difficulty": 3,
+    "question": "Que s'affiche avec ce code ?\nfor i in range(5):\n    if i == 3:\n        break\n    print(i, end=' ')",
+    "options": [
+      "0 1 2",
+      "0 1 2 3",
+      "0 1 2 4",
+      "3"
+    ],
+    "correct_answer": "0 1 2",
+    "explanation": "À i == 3, break arrête la boucle avant d'afficher 3."
+  },
+  {
+    "course": "python-basics",
+    "skill": "functions",
+    "difficulty": 1,
+    "question": "Quel mot-clé définit une fonction en Python ?",
+    "options": [
+      "def",
+      "function",
+      "fun",
+      "define"
+    ],
+    "correct_answer": "def",
+    "explanation": "On écrit def nom(paramètres): puis le corps indenté."
+  },
+  {
+    "course": "python-basics",
+    "skill": "functions",
+    "difficulty": 1,
+    "question": "Que fait le mot-clé return dans une fonction ?",
+    "options": [
+      "Il renvoie une valeur et termine la fonction",
+      "Il affiche une valeur à l'écran",
+      "Il répète la fonction",
+      "Il supprime la fonction"
+    ],
+    "correct_answer": "Il renvoie une valeur et termine la fonction",
+    "explanation": "return renvoie le résultat à l'appelant ; print, lui, se contente d'afficher."
+  },
+  {
+    "course": "python-basics",
+    "skill": "functions",
+    "difficulty": 2,
+    "question": "Que renvoie f(3) ?\ndef f(x):\n    return x * 2",
+    "options": [
+      "3",
+      "6",
+      "9",
+      "None"
+    ],
+    "correct_answer": "6",
+    "explanation": "La fonction renvoie le double de x : 3 * 2 = 6."
+  },
+  {
+    "course": "python-basics",
+    "skill": "functions",
+    "difficulty": 2,
+    "question": "Que renvoie une fonction qui n'a aucune instruction return ?",
+    "options": [
+      "0",
+      "None",
+      "Une chaîne vide",
+      "Une erreur"
+    ],
+    "correct_answer": "None",
+    "explanation": "Sans return explicite, une fonction renvoie None."
+  },
+  {
+    "course": "python-basics",
+    "skill": "functions",
+    "difficulty": 2,
+    "question": "Que renvoie saluer() ?\ndef saluer(nom='monde'):\n    return 'Bonjour ' + nom",
+    "options": [
+      "'Bonjour monde'",
+      "'Bonjour '",
+      "Une erreur TypeError",
+      "None"
+    ],
+    "correct_answer": "'Bonjour monde'",
+    "explanation": "Sans argument, le paramètre prend sa valeur par défaut 'monde'."
+  },
+  {
+    "course": "python-basics",
+    "skill": "functions",
+    "difficulty": 3,
+    "question": "Que s'affiche avec ce code ?\ndef f(a, b=2):\n    return a * b\nprint(f(b=3, a=4))",
+    "options": [
+      "8",
+      "12",
+      "7",
+      "Une erreur"
+    ],
+    "correct_answer": "12",
+    "explanation": "Les arguments nommés peuvent être donnés dans n'importe quel ordre : 4 * 3 = 12."
+  },
+  {
+    "course": "python-basics",
+    "skill": "functions",
+    "difficulty": 3,
+    "question": "Que s'affiche avec ce code ?\ndef g(l=[]):\n    l.append(1)\n    return l\ng()\nprint(g())",
+    "options": [
+      "[1]",
+      "[1, 1]",
+      "[]",
+      "Une erreur"
+    ],
+    "correct_answer": "[1, 1]",
+    "explanation": "La valeur par défaut [] est créée une seule fois : le second appel réutilise la même liste."
+  }
+]
