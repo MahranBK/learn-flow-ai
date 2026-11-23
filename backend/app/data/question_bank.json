@@ -1,0 +1,786 @@
+[
+  {
+    "course": "python-basics",
+    "skill": "variables-types",
+    "difficulty": 1,
+    "question": "Quel est le type de la valeur 3.14 en Python ?",
+    "options": [
+      "int",
+      "float",
+      "str",
+      "bool"
+    ],
+    "correct_answer": "float",
+    "explanation": "Un nombre avec une partie décimale est de type float."
+  },
+  {
+    "course": "python-basics",
+    "skill": "variables-types",
+    "difficulty": 1,
+    "question": "Quelle instruction affecte la valeur 10 à la variable age ?",
+    "options": [
+      "age = 10",
+      "int age = 10",
+      "let age = 10",
+      "age <- 10"
+    ],
+    "correct_answer": "age = 10",
+    "explanation": "En Python on affecte avec le signe = , sans déclarer de type."
+  },
+  {
+    "course": "python-basics",
+    "skill": "variables-types",
+    "difficulty": 2,
+    "question": "Quel est le résultat de '5' + '3' ?",
+    "options": [
+      "'53'",
+      "8",
+      "Une erreur TypeError",
+      "'8'"
+    ],
+    "correct_answer": "'53'",
+    "explanation": "Avec des chaînes de caractères, + concatène : on obtient '53'."
+  },
+  {
+    "course": "python-basics",
+    "skill": "variables-types",
+    "difficulty": 2,
+    "question": "Quelle est la valeur de 7 // 2 ?",
+    "options": [
+      "3",
+      "3.5",
+      "4",
+      "2"
+    ],
+    "correct_answer": "3",
+    "explanation": "// est la division entière : 7 // 2 vaut 3."
+  },
+  {
+    "course": "python-basics",
+    "skill": "variables-types",
+    "difficulty": 2,
+    "question": "Que renvoie bool('') (bool d'une chaîne vide) ?",
+    "options": [
+      "True",
+      "False",
+      "None",
+      "Une erreur"
+    ],
+    "correct_answer": "False",
+    "explanation": "Une chaîne vide est considérée comme fausse ; toute chaîne non vide est vraie."
+  },
+  {
+    "course": "python-basics",
+    "skill": "variables-types",
+    "difficulty": 3,
+    "question": "Que renvoie l'expression 0.1 + 0.2 == 0.3 ?",
+    "options": [
+      "True",
+      "False",
+      "Une erreur",
+      "None"
+    ],
+    "correct_answer": "False",
+    "explanation": "Les flottants sont stockés en binaire : 0.1 + 0.2 vaut 0.30000000000000004."
+  },
+  {
+    "course": "python-basics",
+    "skill": "variables-types",
+    "difficulty": 3,
+    "question": "Après a = [1, 2] puis b = a puis b.append(3), que vaut a ?",
+    "options": [
+      "[1, 2]",
+      "[1, 2, 3]",
+      "[3]",
+      "Une erreur"
+    ],
+    "correct_answer": "[1, 2, 3]",
+    "explanation": "b et a désignent la même liste : modifier b modifie aussi a."
+  },
+  {
+    "course": "python-basics",
+    "skill": "conditions",
+    "difficulty": 1,
+    "question": "Quel mot-clé permet d'écrire une condition en Python ?",
+    "options": [
+      "if",
+      "when",
+      "switch",
+      "check"
+    ],
+    "correct_answer": "if",
+    "explanation": "Une condition commence par if (puis éventuellement elif et else)."
+  },
+  {
+    "course": "python-basics",
+    "skill": "conditions",
+    "difficulty": 1,
+    "question": "Quel opérateur teste l'égalité de deux valeurs ?",
+    "options": [
+      "==",
+      "=",
+      "===",
+      "equals"
+    ],
+    "correct_answer": "==",
+    "explanation": "= affecte une valeur, == compare deux valeurs."
+  },
+  {
+    "course": "python-basics",
+    "skill": "conditions",
+    "difficulty": 2,
+    "question": "Que renvoie l'expression 5 > 3 and 2 > 4 ?",
+    "options": [
+      "True",
+      "False",
+      "None",
+      "Une erreur"
+    ],
+    "correct_answer": "False",
+    "explanation": "and exige que les deux comparaisons soient vraies ; 2 > 4 est faux."
+  },
+  {
+    "course": "python-basics",
+    "skill": "conditions",
+    "difficulty": 2,
+    "question": "Que s'affiche avec ce code ?\nx = 15\nif x > 10:\n    print('A')\nelif x > 5:\n    print('B')\nelse:\n    print('C')",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "A puis B"
+    ],
+    "correct_answer": "A",
+    "explanation": "Dès qu'une condition est vraie, les suivantes (elif, else) sont ignorées."
+  },
+  {
+    "course": "python-basics",
+    "skill": "conditions",
+    "difficulty": 2,
+    "question": "Laquelle de ces valeurs est considérée comme fausse dans une condition ?",
+    "options": [
+      "0",
+      "'0'",
+      "[0]",
+      "' '"
+    ],
+    "correct_answer": "0",
+    "explanation": "Le nombre 0 est faux ; la chaîne '0', la liste [0] et ' ' sont non vides donc vraies."
+  },
+  {
+    "course": "python-basics",
+    "skill": "conditions",
+    "difficulty": 3,
+    "question": "Que renvoie l'expression not (True or False) and True ?",
+    "options": [
+      "True",
+      "False",
+      "None",
+      "Une erreur"
+    ],
+    "correct_answer": "False",
+    "explanation": "True or False vaut True ; not True vaut False ; False and True vaut False."
+  },
+  {
+    "course": "python-basics",
+    "skill": "conditions",
+    "difficulty": 3,
+    "question": "Que s'affiche avec ce code ?\nx = None\nif x:\n    print('A')\nelif x is None:\n    print('B')\nelse:\n    print('C')",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "Rien"
+    ],
+    "correct_answer": "B",
+    "explanation": "None est faux, donc le premier if est ignoré ; x is None est vrai, donc B s'affiche."
+  },
+  {
+    "course": "python-basics",
+    "skill": "loops",
+    "difficulty": 1,
+    "question": "Quelle boucle permet de parcourir les éléments d'une liste ?",
+    "options": [
+      "for",
+      "if",
+      "def",
+      "try"
+    ],
+    "correct_answer": "for",
+    "explanation": "for élément in liste: parcourt chaque élément de la liste."
+  },
+  {
+    "course": "python-basics",
+    "skill": "loops",
+    "difficulty": 1,
+    "question": "Que s'affiche avec for i in range(3): print(i) ?",
+    "options": [
+      "Les nombres 0, 1 et 2",
+      "Les nombres 1, 2 et 3",
+      "Les nombres 0, 1, 2 et 3",
+      "Les nombres 1 et 2"
+    ],
+    "correct_answer": "Les nombres 0, 1 et 2",
+    "explanation": "range(3) produit 0, 1, 2 : la borne de fin est exclue."
+  },
+  {
+    "course": "python-basics",
+    "skill": "loops",
+    "difficulty": 2,
+    "question": "Combien de fois s'exécute le corps de for i in range(2, 10, 2) ?",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "8"
+    ],
+    "correct_answer": "4",
+    "explanation": "i prend les valeurs 2, 4, 6 et 8 : quatre tours."
+  },
+  {
+    "course": "python-basics",
+    "skill": "loops",
+    "difficulty": 2,
+    "question": "Quel mot-clé arrête immédiatement une boucle ?",
+    "options": [
+      "continue",
+      "break",
+      "pass",
+      "exit"
+    ],
+    "correct_answer": "break",
+    "explanation": "break sort de la boucle ; continue passe seulement au tour suivant."
+  },
+  {
+    "course": "python-basics",
+    "skill": "loops",
+    "difficulty": 2,
+    "question": "Que vaut s à la fin de ce code ?\ns = 0\nfor i in range(1, 4):\n    s += i",
+    "options": [
+      "3",
+      "6",
+      "10",
+      "4"
+    ],
+    "correct_answer": "6",
+    "explanation": "s = 1 + 2 + 3 = 6 (range(1, 4) donne 1, 2, 3)."
+  },
+  {
+    "course": "python-basics",
+    "skill": "loops",
+    "difficulty": 3,
+    "question": "Que vaut n à la fin de ce code ?\nn = 0\nwhile n < 5:\n    n += 2",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "4"
+    ],
+    "correct_answer": "6",
+    "explanation": "n passe par 0, 2, 4 puis 6 ; à 6 la condition n < 5 est fausse et la boucle s'arrête."
+  },
+  {
+    "course": "python-basics",
+    "skill": "loops",
+    "difficulty": 3,
+    "question": "Que s'affiche avec ce code ?\nfor i in range(5):\n    if i == 3:\n        break\n    print(i, end=' ')",
+    "options": [
+      "0 1 2",
+      "0 1 2 3",
+      "0 1 2 4",
+      "3"
+    ],
+    "correct_answer": "0 1 2",
+    "explanation": "À i == 3, break arrête la boucle avant d'afficher 3."
+  },
+  {
+    "course": "python-basics",
+    "skill": "functions",
+    "difficulty": 1,
+    "question": "Quel mot-clé définit une fonction en Python ?",
+    "options": [
+      "def",
+      "function",
+      "fun",
+      "define"
+    ],
+    "correct_answer": "def",
+    "explanation": "On écrit def nom(paramètres): puis le corps indenté."
+  },
+  {
+    "course": "python-basics",
+    "skill": "functions",
+    "difficulty": 1,
+    "question": "Que fait le mot-clé return dans une fonction ?",
+    "options": [
+      "Il renvoie une valeur et termine la fonction",
+      "Il affiche une valeur à l'écran",
+      "Il répète la fonction",
+      "Il supprime la fonction"
+    ],
+    "correct_answer": "Il renvoie une valeur et termine la fonction",
+    "explanation": "return renvoie le résultat à l'appelant ; print, lui, se contente d'afficher."
+  },
+  {
+    "course": "python-basics",
+    "skill": "functions",
+    "difficulty": 2,
+    "question": "Que renvoie f(3) ?\ndef f(x):\n    return x * 2",
+    "options": [
+      "3",
+      "6",
+      "9",
+      "None"
+    ],
+    "correct_answer": "6",
+    "explanation": "La fonction renvoie le double de x : 3 * 2 = 6."
+  },
+  {
+    "course": "python-basics",
+    "skill": "functions",
+    "difficulty": 2,
+    "question": "Que renvoie une fonction qui n'a aucune instruction return ?",
+    "options": [
+      "0",
+      "None",
+      "Une chaîne vide",
+      "Une erreur"
+    ],
+    "correct_answer": "None",
+    "explanation": "Sans return explicite, une fonction renvoie None."
+  },
+  {
+    "course": "python-basics",
+    "skill": "functions",
+    "difficulty": 2,
+    "question": "Que renvoie saluer() ?\ndef saluer(nom='monde'):\n    return 'Bonjour ' + nom",
+    "options": [
+      "'Bonjour monde'",
+      "'Bonjour '",
+      "Une erreur TypeError",
+      "None"
+    ],
+    "correct_answer": "'Bonjour monde'",
+    "explanation": "Sans argument, le paramètre prend sa valeur par défaut 'monde'."
+  },
+  {
+    "course": "python-basics",
+    "skill": "functions",
+    "difficulty": 3,
+    "question": "Que s'affiche avec ce code ?\ndef f(a, b=2):\n    return a * b\nprint(f(b=3, a=4))",
+    "options": [
+      "8",
+      "12",
+      "7",
+      "Une erreur"
+    ],
+    "correct_answer": "12",
+    "explanation": "Les arguments nommés peuvent être donnés dans n'importe quel ordre : 4 * 3 = 12."
+  },
+  {
+    "course": "python-basics",
+    "skill": "functions",
+    "difficulty": 3,
+    "question": "Que s'affiche avec ce code ?\ndef g(l=[]):\n    l.append(1)\n    return l\ng()\nprint(g())",
+    "options": [
+      "[1]",
+      "[1, 1]",
+      "[]",
+      "Une erreur"
+    ],
+    "correct_answer": "[1, 1]",
+    "explanation": "La valeur par défaut [] est créée une seule fois : le second appel réutilise la même liste."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "select",
+    "difficulty": 1,
+    "question": "Quelle instruction affiche toutes les colonnes de la table etudiants ?",
+    "options": [
+      "SELECT * FROM etudiants;",
+      "SELECT ALL etudiants;",
+      "GET * FROM etudiants;",
+      "SHOW etudiants;"
+    ],
+    "correct_answer": "SELECT * FROM etudiants;",
+    "explanation": "L'étoile * désigne toutes les colonnes : SELECT * FROM table."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "select",
+    "difficulty": 1,
+    "question": "Quel mot-clé supprime les doublons dans le résultat d'une requête SELECT ?",
+    "options": [
+      "DISTINCT",
+      "UNIQUE",
+      "DIFFERENT",
+      "SINGLE"
+    ],
+    "correct_answer": "DISTINCT",
+    "explanation": "SELECT DISTINCT colonne ne garde qu'une seule fois chaque valeur."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "select",
+    "difficulty": 2,
+    "question": "Combien de lignes renvoie cette requête ?\n-- villes(nom) : 'Tunis', 'Sfax', 'Tunis', 'Sousse', 'Sfax'\nSELECT DISTINCT nom FROM villes;",
+    "options": [
+      "2",
+      "3",
+      "5",
+      "1"
+    ],
+    "correct_answer": "3",
+    "explanation": "DISTINCT supprime les doublons : il reste Tunis, Sfax et Sousse."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "select",
+    "difficulty": 2,
+    "question": "Que renvoie cette requête ?\n-- produits(nom, prix) : ('stylo', 2), ('cahier', 5)\nSELECT nom, prix * 2 AS prix_double FROM produits;",
+    "options": [
+      "stylo | 4 et cahier | 10",
+      "stylo | 2 et cahier | 5",
+      "Une erreur : prix_double n'existe pas",
+      "Une seule colonne nommée prix"
+    ],
+    "correct_answer": "stylo | 4 et cahier | 10",
+    "explanation": "L'expression prix * 2 est calculée pour chaque ligne ; AS donne un nom (alias) à la colonne obtenue."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "select",
+    "difficulty": 2,
+    "question": "À quoi sert LIMIT 3 à la fin d'une requête SELECT ?",
+    "options": [
+      "À ne renvoyer que les 3 premières lignes du résultat",
+      "À renvoyer seulement 3 colonnes",
+      "À répéter la requête 3 fois",
+      "À interdire plus de 3 conditions"
+    ],
+    "correct_answer": "À ne renvoyer que les 3 premières lignes du résultat",
+    "explanation": "LIMIT restreint le nombre de lignes renvoyées (souvent combiné avec ORDER BY)."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "select",
+    "difficulty": 3,
+    "question": "Combien de lignes renvoie cette requête ?\n-- a(x) : 1, 2, 3\nSELECT x FROM a\nUNION\nSELECT x FROM a;",
+    "options": [
+      "3",
+      "6",
+      "1",
+      "Une erreur"
+    ],
+    "correct_answer": "3",
+    "explanation": "UNION supprime les doublons (contrairement à UNION ALL qui en renverrait 6)."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "select",
+    "difficulty": 3,
+    "question": "Que renvoie cette requête ?\nSELECT 1 + NULL;",
+    "options": [
+      "NULL",
+      "1",
+      "0",
+      "Une erreur"
+    ],
+    "correct_answer": "NULL",
+    "explanation": "Toute opération arithmétique avec NULL (valeur inconnue) donne NULL."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "filtering",
+    "difficulty": 1,
+    "question": "Quelle clause permet de filtrer les lignes d'une table ?",
+    "options": [
+      "WHERE",
+      "FROM",
+      "ORDER BY",
+      "GROUP BY"
+    ],
+    "correct_answer": "WHERE",
+    "explanation": "WHERE garde uniquement les lignes qui respectent la condition."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "filtering",
+    "difficulty": 1,
+    "question": "Comment trier les produits du prix le plus élevé au plus bas ?",
+    "options": [
+      "ORDER BY prix DESC",
+      "ORDER BY prix ASC",
+      "SORT prix DESC",
+      "GROUP BY prix DESC"
+    ],
+    "correct_answer": "ORDER BY prix DESC",
+    "explanation": "ORDER BY trie ; DESC signifie décroissant (ASC, croissant, est la valeur par défaut)."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "filtering",
+    "difficulty": 2,
+    "question": "Que renvoie cette requête ?\n-- produits(nom, prix) : ('stylo', 2), ('cahier', 5), ('sac', 20)\nSELECT nom FROM produits\nWHERE prix > 3 AND prix < 20;",
+    "options": [
+      "cahier",
+      "cahier et sac",
+      "stylo et cahier",
+      "Aucune ligne"
+    ],
+    "correct_answer": "cahier",
+    "explanation": "Seul le cahier (prix 5) est strictement entre 3 et 20."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "filtering",
+    "difficulty": 2,
+    "question": "Quelle condition sélectionne les noms qui commencent par la lettre A ?",
+    "options": [
+      "WHERE nom LIKE 'A%'",
+      "WHERE nom = 'A*'",
+      "WHERE nom LIKE '%A'",
+      "WHERE nom STARTS 'A'"
+    ],
+    "correct_answer": "WHERE nom LIKE 'A%'",
+    "explanation": "Avec LIKE, % remplace n'importe quelle suite de caractères : 'A%' = commence par A."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "filtering",
+    "difficulty": 2,
+    "question": "Que renvoie cette requête ?\n-- produits(nom, prix) : ('stylo', 2), ('cahier', 5), ('sac', 20)\nSELECT nom FROM produits\nORDER BY prix DESC\nLIMIT 2;",
+    "options": [
+      "sac puis cahier",
+      "stylo puis cahier",
+      "sac puis stylo",
+      "cahier puis sac"
+    ],
+    "correct_answer": "sac puis cahier",
+    "explanation": "Tri décroissant par prix (sac 20, cahier 5, stylo 2), puis LIMIT 2 garde les deux premières lignes."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "filtering",
+    "difficulty": 3,
+    "question": "Que renvoie cette requête ?\n-- etudiants(nom, age) : ('Ali', 20), ('Sara', NULL), ('Omar', 22)\nSELECT nom FROM etudiants\nWHERE age <> 20;",
+    "options": [
+      "Omar",
+      "Sara et Omar",
+      "Ali",
+      "Aucune ligne"
+    ],
+    "correct_answer": "Omar",
+    "explanation": "Comparer NULL avec une valeur n'est ni vrai ni faux : Sara (age NULL) est exclue du résultat."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "filtering",
+    "difficulty": 3,
+    "question": "Que renvoie cette requête ?\n-- produits(nom, prix) : ('stylo', 2), ('cahier', 5), ('sac', 20)\nSELECT nom FROM produits\nWHERE prix < 3 OR prix > 4 AND nom <> 'sac';",
+    "options": [
+      "stylo et cahier",
+      "cahier seulement",
+      "stylo seulement",
+      "stylo, cahier et sac"
+    ],
+    "correct_answer": "stylo et cahier",
+    "explanation": "AND est prioritaire sur OR : on lit prix < 3 OR (prix > 4 AND nom <> 'sac'), ce qui garde stylo et cahier."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "joins",
+    "difficulty": 1,
+    "question": "Quelle clause permet de relier deux tables grâce à une colonne commune ?",
+    "options": [
+      "JOIN ... ON",
+      "UNION ... ON",
+      "GROUP ... ON",
+      "ORDER ... ON"
+    ],
+    "correct_answer": "JOIN ... ON",
+    "explanation": "JOIN table2 ON condition associe les lignes des deux tables."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "joins",
+    "difficulty": 1,
+    "question": "Qu'est-ce qu'une clé étrangère ?",
+    "options": [
+      "Une colonne qui référence la clé primaire d'une autre table",
+      "Une colonne dont les valeurs sont toujours uniques dans la table",
+      "Une colonne chiffrée pour des raisons de sécurité",
+      "Une colonne qui accepte uniquement des nombres"
+    ],
+    "correct_answer": "Une colonne qui référence la clé primaire d'une autre table",
+    "explanation": "La clé étrangère crée le lien entre deux tables (par exemple inscriptions.etudiant_id vers etudiants.id)."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "joins",
+    "difficulty": 2,
+    "question": "Combien de lignes renvoie cette requête ?\n-- etudiants(id, nom) : (1, 'Ali'), (2, 'Sara'), (3, 'Omar')\n-- inscriptions(etudiant_id, cours) : (1, 'SQL'), (1, 'Python'), (2, 'SQL')\nSELECT e.nom, i.cours\nFROM etudiants e\nJOIN inscriptions i ON i.etudiant_id = e.id;",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "2"
+    ],
+    "correct_answer": "3",
+    "explanation": "JOIN (INNER JOIN) ne garde que les correspondances : Ali (2 fois) et Sara (1 fois). Omar n'a aucune inscription."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "joins",
+    "difficulty": 2,
+    "question": "Quelle jointure garde toutes les lignes de la table de gauche, même sans correspondance dans la table de droite ?",
+    "options": [
+      "LEFT JOIN",
+      "INNER JOIN",
+      "CROSS JOIN",
+      "JOIN ... USING"
+    ],
+    "correct_answer": "LEFT JOIN",
+    "explanation": "LEFT JOIN conserve toutes les lignes de gauche ; les colonnes de droite valent NULL s'il n'y a pas de correspondance."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "joins",
+    "difficulty": 2,
+    "question": "Que renvoie cette requête ?\n-- etudiants(id, nom) : (1, 'Ali'), (2, 'Sara'), (3, 'Omar')\n-- inscriptions(etudiant_id, cours) : (1, 'SQL'), (1, 'Python'), (2, 'SQL')\nSELECT e.nom\nFROM etudiants e\nJOIN inscriptions i ON i.etudiant_id = e.id\nWHERE i.cours = 'SQL';",
+    "options": [
+      "Ali et Sara",
+      "Ali, Sara et Omar",
+      "Ali seulement",
+      "Sara seulement"
+    ],
+    "correct_answer": "Ali et Sara",
+    "explanation": "Ali et Sara sont inscrites à SQL. Omar n'a aucune inscription, donc il n'apparaît pas."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "joins",
+    "difficulty": 3,
+    "question": "Combien de lignes renvoie cette requête ?\n-- etudiants(id, nom) : (1, 'Ali'), (2, 'Sara'), (3, 'Omar')\n-- inscriptions(etudiant_id, cours) : (1, 'SQL'), (1, 'Python'), (2, 'SQL')\nSELECT e.nom, i.cours\nFROM etudiants e\nLEFT JOIN inscriptions i ON i.etudiant_id = e.id;",
+    "options": [
+      "4",
+      "3",
+      "2",
+      "6"
+    ],
+    "correct_answer": "4",
+    "explanation": "Les 3 correspondances de la jointure simple, plus Omar qui est conservé avec cours = NULL : 4 lignes."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "joins",
+    "difficulty": 3,
+    "question": "Que renvoie cette requête ?\n-- etudiants(id, nom) : (1, 'Ali'), (2, 'Sara'), (3, 'Omar')\n-- inscriptions(etudiant_id, cours) : (1, 'SQL'), (1, 'Python'), (2, 'SQL')\nSELECT e.nom\nFROM etudiants e\nLEFT JOIN inscriptions i ON i.etudiant_id = e.id\nWHERE i.cours IS NULL;",
+    "options": [
+      "Omar",
+      "Ali",
+      "Sara",
+      "Aucune ligne"
+    ],
+    "correct_answer": "Omar",
+    "explanation": "Avec un LEFT JOIN, les étudiants sans inscription ont cours = NULL : cette requête trouve ceux qui n'ont aucune inscription."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "aggregation",
+    "difficulty": 1,
+    "question": "Quelle fonction calcule la moyenne des valeurs d'une colonne ?",
+    "options": [
+      "AVG",
+      "MEAN",
+      "AVERAGE",
+      "MOY"
+    ],
+    "correct_answer": "AVG",
+    "explanation": "AVG(colonne) renvoie la moyenne (SUM pour la somme, COUNT pour le nombre, MIN et MAX pour les extrêmes)."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "aggregation",
+    "difficulty": 1,
+    "question": "Quelle expression renvoie le nombre de lignes d'une table ?",
+    "options": [
+      "COUNT(*)",
+      "SUM(*)",
+      "LENGTH(*)",
+      "ROWS(*)"
+    ],
+    "correct_answer": "COUNT(*)",
+    "explanation": "COUNT(*) compte toutes les lignes du résultat."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "aggregation",
+    "difficulty": 2,
+    "question": "Que renvoie cette requête ?\n-- notes(valeur) : 10, 14, 16\nSELECT AVG(valeur) FROM notes;",
+    "options": [
+      "environ 13,33",
+      "14",
+      "13",
+      "40"
+    ],
+    "correct_answer": "environ 13,33",
+    "explanation": "(10 + 14 + 16) / 3 = 40 / 3, soit environ 13,33."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "aggregation",
+    "difficulty": 2,
+    "question": "Que renvoie cette requête ?\n-- notes(valeur) : 10, NULL, 20\nSELECT COUNT(valeur) FROM notes;",
+    "options": [
+      "2",
+      "3",
+      "1",
+      "NULL"
+    ],
+    "correct_answer": "2",
+    "explanation": "COUNT(colonne) ignore les valeurs NULL (COUNT(*) compterait 3 lignes)."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "aggregation",
+    "difficulty": 2,
+    "question": "Que renvoie cette requête ?\n-- notes(matiere, valeur) : ('SQL', 10), ('SQL', 16), ('Python', 14)\nSELECT matiere, COUNT(*)\nFROM notes\nGROUP BY matiere;",
+    "options": [
+      "Python | 1 et SQL | 2",
+      "SQL | 3 et Python | 3",
+      "Une seule ligne : 3",
+      "Une erreur : il manque ORDER BY"
+    ],
+    "correct_answer": "Python | 1 et SQL | 2",
+    "explanation": "GROUP BY forme un groupe par matière et COUNT(*) compte les lignes de chaque groupe."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "aggregation",
+    "difficulty": 3,
+    "question": "Que renvoie cette requête ?\n-- notes(matiere, valeur) : ('SQL', 10), ('SQL', 16), ('Python', 14)\nSELECT matiere\nFROM notes\nGROUP BY matiere\nHAVING COUNT(*) > 1;",
+    "options": [
+      "SQL",
+      "Python",
+      "SQL et Python",
+      "Aucune ligne"
+    ],
+    "correct_answer": "SQL",
+    "explanation": "HAVING filtre les groupes après le regroupement : seul le groupe SQL contient plus d'une ligne."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "aggregation",
+    "difficulty": 3,
+    "question": "Que renvoie cette requête ?\n-- notes(valeur) : 10, NULL, 20\nSELECT AVG(valeur) FROM notes;",
+    "options": [
+      "15",
+      "10",
+      "30",
+      "NULL"
+    ],
+    "correct_answer": "15",
+    "explanation": "AVG ignore les NULL : (10 + 20) / 2 = 15, et non 30 / 3."
+  }
+]
