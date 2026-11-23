@@ -9,6 +9,7 @@ class SkillOut(ORMModel):
 
 class CourseOut(ORMModel):
     id: int
+    domain_id: int
     code: str
     title: str
     description: str | None = None

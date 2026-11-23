@@ -7,6 +7,7 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 from app.db.database import Base
 
 if TYPE_CHECKING:
+    from app.models.domain import Domain
     from app.models.placement import PlacementTest
     from app.models.role import Role
 
@@ -33,3 +34,5 @@ class User(Base):
     tests: Mapped[list["PlacementTest"]] = relationship(
         back_populates="user", cascade="all, delete-orphan"
     )
+    # Domaines qui intéressent l'étudiant (choisis à l'onboarding)
+    interests: Mapped[list["Domain"]] = relationship(secondary="user_interests", order_by="Domain.name")
