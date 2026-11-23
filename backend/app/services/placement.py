@@ -23,12 +23,14 @@ from app.models import (
     Difficulty,
     GenerationSource,
     PlacementTest,
+    QuestionSource,
     ReviewStatus,
     Skill,
     TestQuestion,
     TestStatus,
 )
 from app.models.user import utcnow
+from app.services.question_generation import Generator, top_up_bank
 from app.services.scoring import MIN_QUESTIONS_PER_SKILL
 
 logger = logging.getLogger(__name__)
@@ -163,6 +165,13 @@ def build_test(db: Session, user_id: int, course: Course, rng: random.Random) ->
         raise NotEnoughQuestionsError("Banque de questions insuffisante pour ce cours.")
 
     rng.shuffle(selected)  # les compétences sont mélangées dans le test
+    llm_count = sum(question.source == QuestionSource.LLM for _, question in selected)
+    if llm_count == 0:
+        source = GenerationSource.BANK
+    elif llm_count == len(selected):
+        source = GenerationSource.LLM
+    else:
+        source = GenerationSource.MIXED
     last_attempt = db.scalar(
         select(func.max(PlacementTest.attempt_number)).where(
             PlacementTest.user_id == user_id, PlacementTest.course_id == course.id
@@ -174,7 +183,7 @@ def build_test(db: Session, user_id: int, course: Course, rng: random.Random) ->
         attempt_number=(last_attempt or 0) + 1,
         status=TestStatus.IN_PROGRESS,
         total_questions=len(selected),
-        generation_source=GenerationSource.BANK,
+        generation_source=source,
     )
     test.questions = [
         TestQuestion(
@@ -228,10 +237,15 @@ def _check_retake_allowed(db: Session, user_id: int, course_id: int) -> None:
 
 
 def start_or_resume(
-    db: Session, user_id: int, course_id: int, rng: random.Random | None = None
+    db: Session,
+    user_id: int,
+    course_id: int,
+    rng: random.Random | None = None,
+    generate: Generator | None = None,
 ) -> tuple[PlacementTest, bool]:
     """
     Renvoie (test, créé) : le test en cours s'il existe (créé=False), sinon un nouveau test.
+    Si `generate` est fourni (LLM), la banque du cours est d'abord complétée si elle est incomplète.
     Lève CourseNotFoundError, RetakeNotAllowedError ou NotEnoughQuestionsError.
     """
     course = db.scalar(
@@ -247,6 +261,8 @@ def start_or_resume(
         return active, False
 
     _check_retake_allowed(db, user_id, course.id)
+    if generate is not None:
+        top_up_bank(db, course, generate)
 
     test = build_test(db, user_id, course, rng or random.Random())
     db.add(test)

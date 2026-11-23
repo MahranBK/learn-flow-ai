@@ -22,8 +22,18 @@ services:
       - "8000:8000"
     volumes:
       - ./backend:/app
+    
     environment:
       - DATABASE_URL=postgresql://admin:adminpassword@db:5432/learnflow_db
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY:-dev-secret-change-me}
+      - LLM_API_KEY=${LLM_API_KEY:-}
+      - LLM_API_URL=${LLM_API_URL:-https://generativelanguage.googleapis.com/v1beta/openai/chat/completions}
+      - LLM_MODEL=${LLM_MODEL:-gemini-3.8-flash}
+      - LLM_FALLBACK_MODEL=${LLM_FALLBACK_MODEL:-}
+      - LLM_REASONING_EFFORT=${LLM_REASONING_EFFORT-low}
+      - LLM_TIMEOUT_SECONDS=${LLM_TIMEOUT_SECONDS:-45}
+  
+    
     depends_on:
        db:
           condition: service_healthy
