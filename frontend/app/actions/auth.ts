@@ -70,7 +70,7 @@ export async function register(
   if (res.status === 422 && Array.isArray(data?.detail)) {
     const apiErrors: RegisterState["errors"] = {};
     for (const err of data.detail) {
-      const field = err.loc?.[err.loc.length - 1];
+      const field : unknown = err.loc?.[err.loc.length - 1]; 
       if (field === "full_name" || field === "email" || field === "password") {
         apiErrors[field] = String(err.msg).replace(/^Value error, /, "");
       }
