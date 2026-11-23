@@ -84,3 +84,26 @@ def test_competence_inconnue_fait_echouer_le_chargement(db, tmp_path):
     path.write_text(json.dumps(bad), encoding="utf-8")
     with pytest.raises(ValueError, match="compétence inconnue"):
         seed_question_bank(db, path)
+
+
+
+def test_chaque_cours_du_catalogue_a_une_banque_suffisante(db):
+    """Un cours sans assez de questions ferait échouer « Commencer le test » (503)."""
+    from app.models import Course
+
+    seed_catalog(db)
+    seed_question_bank(db)
+    db.commit()
+
+    for course in db.scalars(select(Course)):
+        assert len(course.skills) >= 4, f"{course.code} : moins de 4 compétences"
+        for skill in course.skills:
+            counts = Counter(
+                db.scalars(
+                    select(BankQuestion.difficulty).where(
+                        BankQuestion.skill_id == skill.id,
+                        BankQuestion.review_status == ReviewStatus.APPROVED,
+                    )
+                ).all()
+            )
+            assert counts[1] >= 2 and counts[2] >= 3 and counts[3] >= 2, f"{course.code}/{skill.code}: {dict(counts)}"

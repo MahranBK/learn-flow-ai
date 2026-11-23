@@ -390,5 +390,397 @@
     ],
     "correct_answer": "[1, 1]",
     "explanation": "La valeur par défaut [] est créée une seule fois : le second appel réutilise la même liste."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "select",
+    "difficulty": 1,
+    "question": "Quelle instruction affiche toutes les colonnes de la table etudiants ?",
+    "options": [
+      "SELECT * FROM etudiants;",
+      "SELECT ALL etudiants;",
+      "GET * FROM etudiants;",
+      "SHOW etudiants;"
+    ],
+    "correct_answer": "SELECT * FROM etudiants;",
+    "explanation": "L'étoile * désigne toutes les colonnes : SELECT * FROM table."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "select",
+    "difficulty": 1,
+    "question": "Quel mot-clé supprime les doublons dans le résultat d'une requête SELECT ?",
+    "options": [
+      "DISTINCT",
+      "UNIQUE",
+      "DIFFERENT",
+      "SINGLE"
+    ],
+    "correct_answer": "DISTINCT",
+    "explanation": "SELECT DISTINCT colonne ne garde qu'une seule fois chaque valeur."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "select",
+    "difficulty": 2,
+    "question": "Combien de lignes renvoie cette requête ?\n-- villes(nom) : 'Tunis', 'Sfax', 'Tunis', 'Sousse', 'Sfax'\nSELECT DISTINCT nom FROM villes;",
+    "options": [
+      "2",
+      "3",
+      "5",
+      "1"
+    ],
+    "correct_answer": "3",
+    "explanation": "DISTINCT supprime les doublons : il reste Tunis, Sfax et Sousse."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "select",
+    "difficulty": 2,
+    "question": "Que renvoie cette requête ?\n-- produits(nom, prix) : ('stylo', 2), ('cahier', 5)\nSELECT nom, prix * 2 AS prix_double FROM produits;",
+    "options": [
+      "stylo | 4 et cahier | 10",
+      "stylo | 2 et cahier | 5",
+      "Une erreur : prix_double n'existe pas",
+      "Une seule colonne nommée prix"
+    ],
+    "correct_answer": "stylo | 4 et cahier | 10",
+    "explanation": "L'expression prix * 2 est calculée pour chaque ligne ; AS donne un nom (alias) à la colonne obtenue."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "select",
+    "difficulty": 2,
+    "question": "À quoi sert LIMIT 3 à la fin d'une requête SELECT ?",
+    "options": [
+      "À ne renvoyer que les 3 premières lignes du résultat",
+      "À renvoyer seulement 3 colonnes",
+      "À répéter la requête 3 fois",
+      "À interdire plus de 3 conditions"
+    ],
+    "correct_answer": "À ne renvoyer que les 3 premières lignes du résultat",
+    "explanation": "LIMIT restreint le nombre de lignes renvoyées (souvent combiné avec ORDER BY)."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "select",
+    "difficulty": 3,
+    "question": "Combien de lignes renvoie cette requête ?\n-- a(x) : 1, 2, 3\nSELECT x FROM a\nUNION\nSELECT x FROM a;",
+    "options": [
+      "3",
+      "6",
+      "1",
+      "Une erreur"
+    ],
+    "correct_answer": "3",
+    "explanation": "UNION supprime les doublons (contrairement à UNION ALL qui en renverrait 6)."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "select",
+    "difficulty": 3,
+    "question": "Que renvoie cette requête ?\nSELECT 1 + NULL;",
+    "options": [
+      "NULL",
+      "1",
+      "0",
+      "Une erreur"
+    ],
+    "correct_answer": "NULL",
+    "explanation": "Toute opération arithmétique avec NULL (valeur inconnue) donne NULL."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "filtering",
+    "difficulty": 1,
+    "question": "Quelle clause permet de filtrer les lignes d'une table ?",
+    "options": [
+      "WHERE",
+      "FROM",
+      "ORDER BY",
+      "GROUP BY"
+    ],
+    "correct_answer": "WHERE",
+    "explanation": "WHERE garde uniquement les lignes qui respectent la condition."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "filtering",
+    "difficulty": 1,
+    "question": "Comment trier les produits du prix le plus élevé au plus bas ?",
+    "options": [
+      "ORDER BY prix DESC",
+      "ORDER BY prix ASC",
+      "SORT prix DESC",
+      "GROUP BY prix DESC"
+    ],
+    "correct_answer": "ORDER BY prix DESC",
+    "explanation": "ORDER BY trie ; DESC signifie décroissant (ASC, croissant, est la valeur par défaut)."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "filtering",
+    "difficulty": 2,
+    "question": "Que renvoie cette requête ?\n-- produits(nom, prix) : ('stylo', 2), ('cahier', 5), ('sac', 20)\nSELECT nom FROM produits\nWHERE prix > 3 AND prix < 20;",
+    "options": [
+      "cahier",
+      "cahier et sac",
+      "stylo et cahier",
+      "Aucune ligne"
+    ],
+    "correct_answer": "cahier",
+    "explanation": "Seul le cahier (prix 5) est strictement entre 3 et 20."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "filtering",
+    "difficulty": 2,
+    "question": "Quelle condition sélectionne les noms qui commencent par la lettre A ?",
+    "options": [
+      "WHERE nom LIKE 'A%'",
+      "WHERE nom = 'A*'",
+      "WHERE nom LIKE '%A'",
+      "WHERE nom STARTS 'A'"
+    ],
+    "correct_answer": "WHERE nom LIKE 'A%'",
+    "explanation": "Avec LIKE, % remplace n'importe quelle suite de caractères : 'A%' = commence par A."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "filtering",
+    "difficulty": 2,
+    "question": "Que renvoie cette requête ?\n-- produits(nom, prix) : ('stylo', 2), ('cahier', 5), ('sac', 20)\nSELECT nom FROM produits\nORDER BY prix DESC\nLIMIT 2;",
+    "options": [
+      "sac puis cahier",
+      "stylo puis cahier",
+      "sac puis stylo",
+      "cahier puis sac"
+    ],
+    "correct_answer": "sac puis cahier",
+    "explanation": "Tri décroissant par prix (sac 20, cahier 5, stylo 2), puis LIMIT 2 garde les deux premières lignes."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "filtering",
+    "difficulty": 3,
+    "question": "Que renvoie cette requête ?\n-- etudiants(nom, age) : ('Ali', 20), ('Sara', NULL), ('Omar', 22)\nSELECT nom FROM etudiants\nWHERE age <> 20;",
+    "options": [
+      "Omar",
+      "Sara et Omar",
+      "Ali",
+      "Aucune ligne"
+    ],
+    "correct_answer": "Omar",
+    "explanation": "Comparer NULL avec une valeur n'est ni vrai ni faux : Sara (age NULL) est exclue du résultat."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "filtering",
+    "difficulty": 3,
+    "question": "Que renvoie cette requête ?\n-- produits(nom, prix) : ('stylo', 2), ('cahier', 5), ('sac', 20)\nSELECT nom FROM produits\nWHERE prix < 3 OR prix > 4 AND nom <> 'sac';",
+    "options": [
+      "stylo et cahier",
+      "cahier seulement",
+      "stylo seulement",
+      "stylo, cahier et sac"
+    ],
+    "correct_answer": "stylo et cahier",
+    "explanation": "AND est prioritaire sur OR : on lit prix < 3 OR (prix > 4 AND nom <> 'sac'), ce qui garde stylo et cahier."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "joins",
+    "difficulty": 1,
+    "question": "Quelle clause permet de relier deux tables grâce à une colonne commune ?",
+    "options": [
+      "JOIN ... ON",
+      "UNION ... ON",
+      "GROUP ... ON",
+      "ORDER ... ON"
+    ],
+    "correct_answer": "JOIN ... ON",
+    "explanation": "JOIN table2 ON condition associe les lignes des deux tables."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "joins",
+    "difficulty": 1,
+    "question": "Qu'est-ce qu'une clé étrangère ?",
+    "options": [
+      "Une colonne qui référence la clé primaire d'une autre table",
+      "Une colonne dont les valeurs sont toujours uniques dans la table",
+      "Une colonne chiffrée pour des raisons de sécurité",
+      "Une colonne qui accepte uniquement des nombres"
+    ],
+    "correct_answer": "Une colonne qui référence la clé primaire d'une autre table",
+    "explanation": "La clé étrangère crée le lien entre deux tables (par exemple inscriptions.etudiant_id vers etudiants.id)."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "joins",
+    "difficulty": 2,
+    "question": "Combien de lignes renvoie cette requête ?\n-- etudiants(id, nom) : (1, 'Ali'), (2, 'Sara'), (3, 'Omar')\n-- inscriptions(etudiant_id, cours) : (1, 'SQL'), (1, 'Python'), (2, 'SQL')\nSELECT e.nom, i.cours\nFROM etudiants e\nJOIN inscriptions i ON i.etudiant_id = e.id;",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "2"
+    ],
+    "correct_answer": "3",
+    "explanation": "JOIN (INNER JOIN) ne garde que les correspondances : Ali (2 fois) et Sara (1 fois). Omar n'a aucune inscription."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "joins",
+    "difficulty": 2,
+    "question": "Quelle jointure garde toutes les lignes de la table de gauche, même sans correspondance dans la table de droite ?",
+    "options": [
+      "LEFT JOIN",
+      "INNER JOIN",
+      "CROSS JOIN",
+      "JOIN ... USING"
+    ],
+    "correct_answer": "LEFT JOIN",
+    "explanation": "LEFT JOIN conserve toutes les lignes de gauche ; les colonnes de droite valent NULL s'il n'y a pas de correspondance."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "joins",
+    "difficulty": 2,
+    "question": "Que renvoie cette requête ?\n-- etudiants(id, nom) : (1, 'Ali'), (2, 'Sara'), (3, 'Omar')\n-- inscriptions(etudiant_id, cours) : (1, 'SQL'), (1, 'Python'), (2, 'SQL')\nSELECT e.nom\nFROM etudiants e\nJOIN inscriptions i ON i.etudiant_id = e.id\nWHERE i.cours = 'SQL';",
+    "options": [
+      "Ali et Sara",
+      "Ali, Sara et Omar",
+      "Ali seulement",
+      "Sara seulement"
+    ],
+    "correct_answer": "Ali et Sara",
+    "explanation": "Ali et Sara sont inscrites à SQL. Omar n'a aucune inscription, donc il n'apparaît pas."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "joins",
+    "difficulty": 3,
+    "question": "Combien de lignes renvoie cette requête ?\n-- etudiants(id, nom) : (1, 'Ali'), (2, 'Sara'), (3, 'Omar')\n-- inscriptions(etudiant_id, cours) : (1, 'SQL'), (1, 'Python'), (2, 'SQL')\nSELECT e.nom, i.cours\nFROM etudiants e\nLEFT JOIN inscriptions i ON i.etudiant_id = e.id;",
+    "options": [
+      "4",
+      "3",
+      "2",
+      "6"
+    ],
+    "correct_answer": "4",
+    "explanation": "Les 3 correspondances de la jointure simple, plus Omar qui est conservé avec cours = NULL : 4 lignes."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "joins",
+    "difficulty": 3,
+    "question": "Que renvoie cette requête ?\n-- etudiants(id, nom) : (1, 'Ali'), (2, 'Sara'), (3, 'Omar')\n-- inscriptions(etudiant_id, cours) : (1, 'SQL'), (1, 'Python'), (2, 'SQL')\nSELECT e.nom\nFROM etudiants e\nLEFT JOIN inscriptions i ON i.etudiant_id = e.id\nWHERE i.cours IS NULL;",
+    "options": [
+      "Omar",
+      "Ali",
+      "Sara",
+      "Aucune ligne"
+    ],
+    "correct_answer": "Omar",
+    "explanation": "Avec un LEFT JOIN, les étudiants sans inscription ont cours = NULL : cette requête trouve ceux qui n'ont aucune inscription."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "aggregation",
+    "difficulty": 1,
+    "question": "Quelle fonction calcule la moyenne des valeurs d'une colonne ?",
+    "options": [
+      "AVG",
+      "MEAN",
+      "AVERAGE",
+      "MOY"
+    ],
+    "correct_answer": "AVG",
+    "explanation": "AVG(colonne) renvoie la moyenne (SUM pour la somme, COUNT pour le nombre, MIN et MAX pour les extrêmes)."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "aggregation",
+    "difficulty": 1,
+    "question": "Quelle expression renvoie le nombre de lignes d'une table ?",
+    "options": [
+      "COUNT(*)",
+      "SUM(*)",
+      "LENGTH(*)",
+      "ROWS(*)"
+    ],
+    "correct_answer": "COUNT(*)",
+    "explanation": "COUNT(*) compte toutes les lignes du résultat."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "aggregation",
+    "difficulty": 2,
+    "question": "Que renvoie cette requête ?\n-- notes(valeur) : 10, 14, 16\nSELECT AVG(valeur) FROM notes;",
+    "options": [
+      "environ 13,33",
+      "14",
+      "13",
+      "40"
+    ],
+    "correct_answer": "environ 13,33",
+    "explanation": "(10 + 14 + 16) / 3 = 40 / 3, soit environ 13,33."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "aggregation",
+    "difficulty": 2,
+    "question": "Que renvoie cette requête ?\n-- notes(valeur) : 10, NULL, 20\nSELECT COUNT(valeur) FROM notes;",
+    "options": [
+      "2",
+      "3",
+      "1",
+      "NULL"
+    ],
+    "correct_answer": "2",
+    "explanation": "COUNT(colonne) ignore les valeurs NULL (COUNT(*) compterait 3 lignes)."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "aggregation",
+    "difficulty": 2,
+    "question": "Que renvoie cette requête ?\n-- notes(matiere, valeur) : ('SQL', 10), ('SQL', 16), ('Python', 14)\nSELECT matiere, COUNT(*)\nFROM notes\nGROUP BY matiere;",
+    "options": [
+      "Python | 1 et SQL | 2",
+      "SQL | 3 et Python | 3",
+      "Une seule ligne : 3",
+      "Une erreur : il manque ORDER BY"
+    ],
+    "correct_answer": "Python | 1 et SQL | 2",
+    "explanation": "GROUP BY forme un groupe par matière et COUNT(*) compte les lignes de chaque groupe."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "aggregation",
+    "difficulty": 3,
+    "question": "Que renvoie cette requête ?\n-- notes(matiere, valeur) : ('SQL', 10), ('SQL', 16), ('Python', 14)\nSELECT matiere\nFROM notes\nGROUP BY matiere\nHAVING COUNT(*) > 1;",
+    "options": [
+      "SQL",
+      "Python",
+      "SQL et Python",
+      "Aucune ligne"
+    ],
+    "correct_answer": "SQL",
+    "explanation": "HAVING filtre les groupes après le regroupement : seul le groupe SQL contient plus d'une ligne."
+  },
+  {
+    "course": "sql-basics",
+    "skill": "aggregation",
+    "difficulty": 3,
+    "question": "Que renvoie cette requête ?\n-- notes(valeur) : 10, NULL, 20\nSELECT AVG(valeur) FROM notes;",
+    "options": [
+      "15",
+      "10",
+      "30",
+      "NULL"
+    ],
+    "correct_answer": "15",
+    "explanation": "AVG ignore les NULL : (10 + 20) / 2 = 15, et non 30 / 3."
   }
 ]

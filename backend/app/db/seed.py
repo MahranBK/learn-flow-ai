@@ -30,6 +30,17 @@ CATALOG: list[dict] = [
             {"code": "functions", "name": "Fonctions"},
         ],
     },
+    {
+        "code": "sql-basics",
+        "title": "Bases de SQL",
+        "description": "Test de positionnement sur les requêtes SQL fondamentales.",
+        "skills": [
+            {"code": "select", "name": "Requêtes SELECT"},
+            {"code": "filtering", "name": "Filtrage et tri"},
+            {"code": "joins", "name": "Jointures"},
+            {"code": "aggregation", "name": "Agrégation et regroupement"},
+        ],
+    },
 ]
 
 
