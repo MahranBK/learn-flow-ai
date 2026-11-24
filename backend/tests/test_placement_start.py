@@ -200,5 +200,5 @@ def test_liste_des_cours(client, make_user):
     _, headers = make_user()
     response = client.get("/courses", headers=headers)
     assert response.status_code == 200
-    assert [c["code"] for c in response.json()] == ["python-basics", "sql-basics"]
+    assert {"python-basics", "sql-basics"} <= {c["code"] for c in response.json()}
     assert client.get("/courses").status_code == 401

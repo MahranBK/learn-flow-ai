@@ -5,7 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.db.database import init_db
 
-from app.routers import auth, courses, placement
+from app.routers import auth, courses, domains, placement
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -24,6 +24,7 @@ app.add_middleware(
 )
 
 app.include_router(auth.router)
+app.include_router(domains.router)
 app.include_router(courses.router)
 app.include_router(placement.router)
 @app.get("/health")

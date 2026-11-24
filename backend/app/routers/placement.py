@@ -18,6 +18,7 @@ from app.schemas.placement import (
     SubmitResponse,
     TestQuestionPublic,
 )
+from app.services import llm as llm_service
 from app.services import placement as placement_service
 from app.services import submission as submission_service
 from app.services.scoring import is_reliable
@@ -104,7 +105,9 @@ def start_test(
 ):
     """Démarre un test sur un cours, ou renvoie le test déjà en cours (reprise)."""
     try:
-        test, created = placement_service.start_or_resume(db, current_user.id, payload.course_id)
+        test, created = placement_service.start_or_resume(
+            db, current_user.id, payload.course_id, generate=llm_service.generate_many
+        )
     except placement_service.PlacementError as exc:
         raise _http_error(exc)
 

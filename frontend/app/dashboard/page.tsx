@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Suspense } from "react";
 import { redirect } from "next/navigation";
 import { logout } from "@/app/actions/auth";
+import { getMyInterests } from "@/lib/catalog";
 import { getCurrentUser } from "@/lib/session";
-import PlacementCard from "./placement-card";
+import MyCourses, { CoursesSkeleton } from "./my-courses";
 
 export const metadata: Metadata = {
   title: "Tableau de bord | Learn Flow AI",
@@ -11,45 +13,66 @@ export const metadata: Metadata = {
 
 export default function DashboardPage() {
   return (
-    <main className="mx-auto w-full max-w-3xl flex-1 px-4 py-12">
-      <Suspense fallback={<p className="text-zinc-500">Chargement…</p>}>
-        <UserPanel />
+    <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-10 sm:py-12">
+      <Suspense fallback={<CoursesSkeleton />}>
+        <Dashboard />
       </Suspense>
     </main>
   );
 }
 
-async function UserPanel() {
+async function Dashboard() {
   const user = await getCurrentUser();
   if (!user) redirect("/login?expired=1"); // session refusée par l'API → le proxy supprime le cookie
 
+  const isStudent = user.role === "student";
+  // Un étudiant qui n'a pas encore choisi de domaine passe d'abord par l'écran d'accueil.
+  if (isStudent && (await getMyInterests()).length === 0) redirect("/onboarding");
+
+  const firstName = user.full_name.split(" ")[0];
+
   return (
-    <div className="space-y-6">
-      <div className="rounded-2xl bg-white p-8 shadow-sm ring-1 ring-black/5 dark:bg-zinc-900 dark:ring-white/10">
-        <h1 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-50">
-          Bonjour {user.full_name} 👋
-        </h1>
-        <dl className="mt-4 space-y-1 text-sm text-zinc-600 dark:text-zinc-400">
-          <div><dt className="inline font-medium">Email : </dt><dd className="inline">{user.email}</dd></div>
-          <div><dt className="inline font-medium">Rôle : </dt><dd className="inline">{user.role === "admin" ? "Administrateur" : "Étudiant"}</dd></div>
-        </dl>
-
-        <form action={logout} className="mt-6">
-          <button
-            type="submit"
-            className="rounded-lg border border-zinc-300 px-4 py-2 text-sm font-medium hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800"
+    <div className="space-y-10">
+      <header className="flex flex-wrap items-center justify-between gap-4">
+        <div className="flex items-center gap-4">
+          <span
+            aria-hidden="true"
+            className="flex size-12 items-center justify-center rounded-full bg-indigo-600 text-lg font-semibold text-white"
           >
-            Se déconnecter
-          </button>
-        </form>
-      </div>
+            {firstName.charAt(0).toUpperCase()}
+          </span>
+          <div>
+            <h1 className="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
+              Bonjour {firstName} 👋
+            </h1>
+            <p className="text-sm text-zinc-500">
+              {user.email} · {isStudent ? "Étudiant" : "Administrateur"}
+            </p>
+          </div>
+        </div>
 
-      {/* Le test de positionnement ne concerne que les étudiants */}
-      {user.role === "student" && (
-        <Suspense fallback={<p className="text-zinc-500">Chargement de votre test de positionnement…</p>}>
-          <PlacementCard />
-        </Suspense>
-      )}
+        <div className="flex items-center gap-3">
+          {isStudent && (
+            <Link
+              href="/onboarding"
+              className="rounded-lg border border-zinc-300 px-4 py-2 text-sm font-medium hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800"
+            >
+              Modifier mes domaines
+            </Link>
+          )}
+          <form action={logout}>
+            <button
+              type="submit"
+              className="rounded-lg border border-zinc-300 px-4 py-2 text-sm font-medium hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800"
+            >
+              Se déconnecter
+            </button>
+          </form>
+        </div>
+      </header>
+
+      {/* Les cours et tests de positionnement ne concernent que les étudiants */}
+      {isStudent && <MyCourses />}
     </div>
   );
 }

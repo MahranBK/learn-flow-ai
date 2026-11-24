@@ -8,6 +8,7 @@ from app.db.database import Base
 from app.models.user import utcnow
 
 if TYPE_CHECKING:
+    from app.models.domain import Domain
     from app.models.question_bank import BankQuestion
 
 
@@ -17,12 +18,15 @@ class Course(Base):
     __tablename__ = "courses"
 
     id: Mapped[int] = mapped_column(primary_key=True)
+    # RESTRICT : on ne supprime pas un domaine qui contient encore des cours
+    domain_id: Mapped[int] = mapped_column(ForeignKey("domains.id", ondelete="RESTRICT"), index=True)
     code: Mapped[str] = mapped_column(String(50), unique=True, index=True)  # ex. "python-basics"
     title: Mapped[str] = mapped_column(String(150))
     description: Mapped[str | None] = mapped_column(Text)
     is_active: Mapped[bool] = mapped_column(Boolean, default=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
 
+    domain: Mapped["Domain"] = relationship(back_populates="courses")
     skills: Mapped[list["Skill"]] = relationship(
         back_populates="course", cascade="all, delete-orphan", order_by="Skill.id"
     )

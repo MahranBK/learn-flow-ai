@@ -2,6 +2,8 @@ import os
 
 # Doit être défini AVANT tout import de `app` : les tests n'utilisent jamais la vraie base.
 os.environ["DATABASE_URL"] = "sqlite:///./test.db"
+# Les tests n'appellent jamais le vrai LLM (même si une clé est configurée dans le conteneur).
+os.environ["LLM_API_KEY"] = ""
 
 import pytest
 from sqlalchemy import create_engine, select

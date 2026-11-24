@@ -7,7 +7,7 @@ const initialState: StartTestState = {};
 
 const STYLES = {
   primary:
-    "bg-zinc-900 text-white hover:bg-zinc-700 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-200",
+    "bg-indigo-600 text-white shadow-sm hover:bg-indigo-500",
   secondary:
     "border border-zinc-300 hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800",
 } as const;
