@@ -2,8 +2,8 @@
 Catalogue : domaines → cours → compétences.
 
 Pour ajouter un domaine, un cours ou une compétence : ajouter une entrée ici puis redémarrer le
-backend (le chargement est idempotent). Les cours web-dev et ai n'ont pas encore de cours : ils
-seront ajoutés avec la génération des questions par LLM.
+backend (le chargement est idempotent). Chaque compétence doit avoir ses questions dans
+data/question_bank.json (au minimum 2 faciles, 3 moyennes, 2 difficiles) : le LLM complète ensuite.
 """
 
 CATALOG: list[dict] = [
@@ -50,13 +50,48 @@ CATALOG: list[dict] = [
         "name": "Développement web",
         "description": "Créer des sites et des applications web, du front-end au back-end.",
         "icon": "globe",
-        "courses": [],
+        "courses": [
+            {
+                "code": "html-css-basics",
+                "title": "HTML et CSS",
+                "description": "Test de positionnement sur la structure et le style d'une page web.",
+                "skills": [
+                    {"code": "html-structure", "name": "Structure HTML"},
+                    {"code": "css-selectors", "name": "Sélecteurs et propriétés CSS"},
+                    {"code": "box-model-layout", "name": "Modèle de boîte et mise en page"},
+                    {"code": "responsive", "name": "Responsive design et accessibilité"},
+                ],
+            },
+            {
+                "code": "javascript-basics",
+                "title": "Bases de JavaScript",
+                "description": "Test de positionnement sur les fondamentaux de JavaScript et du DOM.",
+                "skills": [
+                    {"code": "js-variables", "name": "Variables et types"},
+                    {"code": "js-functions", "name": "Fonctions"},
+                    {"code": "js-arrays-objects", "name": "Tableaux et objets"},
+                    {"code": "js-dom-events", "name": "DOM et événements"},
+                ],
+            },
+        ],
     },
     {
         "code": "ai",
         "name": "Intelligence artificielle",
         "description": "Comprendre et construire des systèmes d'apprentissage automatique.",
         "icon": "brain",
-        "courses": [],
+        "courses": [
+            {
+                "code": "ml-basics",
+                "title": "Fondamentaux du Machine Learning",
+                "description": "Test de positionnement sur les notions de base de l'apprentissage automatique.",
+                "skills": [
+                    {"code": "ml-concepts", "name": "Concepts de base de l'IA et du ML"},
+                    {"code": "data-preparation", "name": "Préparation des données"},
+                    {"code": "model-evaluation", "name": "Évaluation des modèles"},
+                    {"code": "overfitting", "name": "Surapprentissage et généralisation"},
+                ],
+            },
+        ],
     },
 ]

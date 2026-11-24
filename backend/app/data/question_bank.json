@@ -782,5 +782,1181 @@
     ],
     "correct_answer": "15",
     "explanation": "AVG ignore les NULL : (10 + 20) / 2 = 15, et non 30 / 3."
+  },
+  {
+    "course": "html-css-basics",
+    "skill": "html-structure",
+    "difficulty": 1,
+    "question": "Quelle balise représente un titre de section de niveau 1 dans le contenu d'une page ?",
+    "options": [
+      "<p>",
+      "<title>",
+      "<h1>",
+      "<head>"
+    ],
+    "correct_answer": "<h1>",
+    "explanation": "<h1> est le titre de plus haut niveau du contenu ; <h2> à <h6> sont les sous-titres."
+  },
+  {
+    "course": "html-css-basics",
+    "skill": "html-structure",
+    "difficulty": 1,
+    "question": "Quelle balise crée un lien hypertexte ?",
+    "options": [
+      "<href>",
+      "<url>",
+      "<link>",
+      "<a>"
+    ],
+    "correct_answer": "<a>",
+    "explanation": "<a href=\"...\"> crée un lien. <link> sert à relier des ressources comme une feuille de style."
+  },
+  {
+    "course": "html-css-basics",
+    "skill": "html-structure",
+    "difficulty": 2,
+    "question": "Quel attribut de la balise <img> fournit un texte de remplacement si l'image ne peut pas s'afficher ?",
+    "options": [
+      "title",
+      "alt",
+      "caption",
+      "src"
+    ],
+    "correct_answer": "alt",
+    "explanation": "alt décrit l'image : il est lu par les lecteurs d'écran et affiché si le chargement échoue."
+  },
+  {
+    "course": "html-css-basics",
+    "skill": "html-structure",
+    "difficulty": 2,
+    "question": "Quelle balise crée une liste à puces ?",
+    "options": [
+      "<li>",
+      "<ul>",
+      "<list>",
+      "<ol>"
+    ],
+    "correct_answer": "<ul>",
+    "explanation": "<ul> est la liste non ordonnée (puces) ; <ol> est ordonnée (numéros) ; <li> est un élément de liste."
+  },
+  {
+    "course": "html-css-basics",
+    "skill": "html-structure",
+    "difficulty": 2,
+    "question": "Où doit-on placer la balise <title> d'une page ?",
+    "options": [
+      "Dans <footer>",
+      "Dans <body>",
+      "Après </html>",
+      "Dans <head>"
+    ],
+    "correct_answer": "Dans <head>",
+    "explanation": "<title> décrit le document : il appartient à l'en-tête <head> et s'affiche dans l'onglet du navigateur."
+  },
+  {
+    "course": "html-css-basics",
+    "skill": "html-structure",
+    "difficulty": 3,
+    "question": "Quel est le rôle de <!DOCTYPE html> en première ligne d'un document ?",
+    "options": [
+      "Importer la feuille de style principale du site dans le document",
+      "Créer automatiquement la balise racine <html> du document",
+      "Indiquer au navigateur que le document est écrit en HTML5",
+      "Définir l'encodage des caractères utilisé dans le document"
+    ],
+    "correct_answer": "Indiquer au navigateur que le document est écrit en HTML5",
+    "explanation": "La déclaration du type de document place le navigateur en mode standard et indique HTML5."
+  },
+  {
+    "course": "html-css-basics",
+    "skill": "html-structure",
+    "difficulty": 3,
+    "question": "Quel champ de formulaire HTML valide demande un e-mail obligatoire ?",
+    "options": [
+      "<input type=\"text\" email=\"true\">",
+      "<input type=\"mail\" mandatory>",
+      "<email required>",
+      "<input type=\"email\" required>"
+    ],
+    "correct_answer": "<input type=\"email\" required>",
+    "explanation": "type=\"email\" active la validation du format et required rend le champ obligatoire."
+  },
+  {
+    "course": "html-css-basics",
+    "skill": "css-selectors",
+    "difficulty": 1,
+    "question": "Quelle propriété CSS change la couleur du texte ?",
+    "options": [
+      "color",
+      "foreground",
+      "font-color",
+      "text-color"
+    ],
+    "correct_answer": "color",
+    "explanation": "color définit la couleur du texte ; background-color définit celle du fond."
+  },
+  {
+    "course": "html-css-basics",
+    "skill": "css-selectors",
+    "difficulty": 1,
+    "question": "Quel sélecteur cible tous les éléments ayant la classe « carte » ?",
+    "options": [
+      "#carte",
+      ".carte",
+      "carte",
+      "*carte"
+    ],
+    "correct_answer": ".carte",
+    "explanation": "Une classe se sélectionne avec un point : .carte ; un identifiant avec # : #carte."
+  },
+  {
+    "course": "html-css-basics",
+    "skill": "css-selectors",
+    "difficulty": 2,
+    "question": "Que sélectionne le sélecteur « ul li » ?",
+    "options": [
+      "Uniquement les <li> enfants directs d'un <ul>",
+      "Les <li> situés à l'intérieur d'un <ul>",
+      "Les <ul> et les <li>",
+      "Les <ul> qui suivent un <li>"
+    ],
+    "correct_answer": "Les <li> situés à l'intérieur d'un <ul>",
+    "explanation": "Un espace désigne un descendant à n'importe quel niveau ; l'enfant direct s'écrit avec >."
+  },
+  {
+    "course": "html-css-basics",
+    "skill": "css-selectors",
+    "difficulty": 2,
+    "question": "Quelle déclaration met un texte en gras ?",
+    "options": [
+      "text-weight: bold;",
+      "font-weight: bold;",
+      "text-decoration: bold;",
+      "font-style: bold;"
+    ],
+    "correct_answer": "font-weight: bold;",
+    "explanation": "font-weight règle l'épaisseur de la police ; font-style sert à l'italique."
+  },
+  {
+    "course": "html-css-basics",
+    "skill": "css-selectors",
+    "difficulty": 2,
+    "question": "Quel sélecteur cible l'élément dont l'identifiant est « menu » ?",
+    "options": [
+      "menu",
+      ".menu",
+      "@menu",
+      "#menu"
+    ],
+    "correct_answer": "#menu",
+    "explanation": "Un identifiant (id) se cible avec # ; il doit être unique dans la page."
+  },
+  {
+    "course": "html-css-basics",
+    "skill": "css-selectors",
+    "difficulty": 3,
+    "question": "Quelle sera la couleur du texte d'un élément <p class=\"note\" id=\"intro\"> avec ces règles ?\np { color: red; }\n.note { color: blue; }\n#intro { color: green; }",
+    "options": [
+      "Vert",
+      "Bleu",
+      "Rouge",
+      "Cela provoque une erreur"
+    ],
+    "correct_answer": "Vert",
+    "explanation": "La spécificité décide : un sélecteur d'identifiant l'emporte sur une classe, qui l'emporte sur un sélecteur de balise."
+  },
+  {
+    "course": "html-css-basics",
+    "skill": "css-selectors",
+    "difficulty": 3,
+    "question": "Que sélectionne le sélecteur « h2 + p » ?",
+    "options": [
+      "Les <h2> et les <p>",
+      "Le <p> placé immédiatement après un <h2>",
+      "Tous les <p> qui suivent un <h2>",
+      "Tous les <p> enfants d'un <h2>"
+    ],
+    "correct_answer": "Le <p> placé immédiatement après un <h2>",
+    "explanation": "+ désigne le frère adjacent immédiat ; ~ désignerait tous les frères suivants."
+  },
+  {
+    "course": "html-css-basics",
+    "skill": "box-model-layout",
+    "difficulty": 1,
+    "question": "Quelle propriété ajoute de l'espace à l'intérieur d'un élément, entre son contenu et sa bordure ?",
+    "options": [
+      "margin",
+      "border",
+      "spacing",
+      "padding"
+    ],
+    "correct_answer": "padding",
+    "explanation": "padding est la marge intérieure ; margin est la marge extérieure."
+  },
+  {
+    "course": "html-css-basics",
+    "skill": "box-model-layout",
+    "difficulty": 1,
+    "question": "Quelle déclaration active la mise en page Flexbox sur un conteneur ?",
+    "options": [
+      "display: flex;",
+      "flex: container;",
+      "position: flex;",
+      "layout: flex;"
+    ],
+    "correct_answer": "display: flex;",
+    "explanation": "On applique display: flex au conteneur : ses enfants deviennent des éléments flexibles."
+  },
+  {
+    "course": "html-css-basics",
+    "skill": "box-model-layout",
+    "difficulty": 2,
+    "question": "Dans un conteneur Flexbox par défaut (en ligne), quelle propriété centre les éléments horizontalement ?",
+    "options": [
+      "justify-content: center;",
+      "flex-align: center;",
+      "margin: flex-center;",
+      "align-items: center;"
+    ],
+    "correct_answer": "justify-content: center;",
+    "explanation": "justify-content agit sur l'axe principal (horizontal par défaut) ; align-items sur l'axe transversal."
+  },
+  {
+    "course": "html-css-basics",
+    "skill": "box-model-layout",
+    "difficulty": 2,
+    "question": "Avec box-sizing: content-box (valeur par défaut), quelle largeur totale occupe un élément de width: 200px, padding: 10px et border: 5px de chaque côté ?",
+    "options": [
+      "210px",
+      "200px",
+      "230px",
+      "215px"
+    ],
+    "correct_answer": "230px",
+    "explanation": "200 + 2 × 10 (padding) + 2 × 5 (bordure) = 230px."
+  },
+  {
+    "course": "html-css-basics",
+    "skill": "box-model-layout",
+    "difficulty": 2,
+    "question": "Quelle est la différence entre margin et padding ?",
+    "options": [
+      "Il n'y a aucune différence : margin et padding sont deux noms pour la même propriété",
+      "margin est à l'intérieur de la bordure, padding est à l'extérieur de la bordure de l'élément",
+      "margin espace l'élément des autres (à l'extérieur de la bordure), padding espace le contenu de la bordure",
+      "margin ne s'applique qu'aux images, tandis que padding s'applique à tous les éléments"
+    ],
+    "correct_answer": "margin espace l'élément des autres (à l'extérieur de la bordure), padding espace le contenu de la bordure",
+    "explanation": "Le modèle de boîte : contenu, puis padding, puis bordure, puis margin."
+  },
+  {
+    "course": "html-css-basics",
+    "skill": "box-model-layout",
+    "difficulty": 3,
+    "question": "Un conteneur flex de 600px de large (sans marge ni espacement) contient trois éléments : l'un avec flex: 2, les deux autres avec flex: 1. Quelle largeur prend l'élément flex: 2 ?",
+    "options": [
+      "200px",
+      "300px",
+      "400px",
+      "240px"
+    ],
+    "correct_answer": "300px",
+    "explanation": "L'espace est réparti en 4 parts (2 + 1 + 1) : 600 × 2 / 4 = 300px."
+  },
+  {
+    "course": "html-css-basics",
+    "skill": "box-model-layout",
+    "difficulty": 3,
+    "question": "Par rapport à quoi est positionné un élément avec position: absolute ?",
+    "options": [
+      "Par rapport à sa position normale dans le flux, comme avec position: relative",
+      "Par rapport au frère qui le précède immédiatement dans le même parent",
+      "Par rapport à son ancêtre positionné le plus proche (sinon à la page)",
+      "Toujours par rapport à la fenêtre du navigateur, même dans un conteneur positionné"
+    ],
+    "correct_answer": "Par rapport à son ancêtre positionné le plus proche (sinon à la page)",
+    "explanation": "absolute sort l'élément du flux et le place selon l'ancêtre le plus proche qui a une position autre que static."
+  },
+  {
+    "course": "html-css-basics",
+    "skill": "responsive",
+    "difficulty": 1,
+    "question": "Quelle balise <meta> est indispensable pour un affichage correct sur mobile ?",
+    "options": [
+      "<meta name=\"responsive\" content=\"width=device-width, initial-scale=1\">",
+      "<meta charset=\"device-width, initial-scale=1\">",
+      "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+      "<meta name=\"mobile\" content=\"width=device-width, initial-scale=1\">"
+    ],
+    "correct_answer": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+    "explanation": "La balise viewport adapte la largeur de la page à celle de l'appareil."
+  },
+  {
+    "course": "html-css-basics",
+    "skill": "responsive",
+    "difficulty": 1,
+    "question": "Quelle fonctionnalité CSS applique des styles selon la largeur de l'écran ?",
+    "options": [
+      "Les variables CSS",
+      "Les animations @keyframes",
+      "Les pseudo-classes",
+      "Les media queries (@media)"
+    ],
+    "correct_answer": "Les media queries (@media)",
+    "explanation": "Les media queries appliquent des règles selon les caractéristiques de l'écran : largeur, orientation, etc."
+  },
+  {
+    "course": "html-css-basics",
+    "skill": "responsive",
+    "difficulty": 2,
+    "question": "Quelle media query applique des styles uniquement aux écrans de 600px de large ou moins ?",
+    "options": [
+      "@media (max-height: 600px)",
+      "@media (min-width: 600px)",
+      "@media (max-width: 600px)",
+      "@media (width: 600px)"
+    ],
+    "correct_answer": "@media (max-width: 600px)",
+    "explanation": "max-width: 600px signifie « largeur inférieure ou égale à 600px »."
+  },
+  {
+    "course": "html-css-basics",
+    "skill": "responsive",
+    "difficulty": 2,
+    "question": "Quelle unité CSS est relative à la largeur de la fenêtre du navigateur ?",
+    "options": [
+      "pt",
+      "vw",
+      "cm",
+      "px"
+    ],
+    "correct_answer": "vw",
+    "explanation": "1vw vaut 1 % de la largeur de la fenêtre (viewport width)."
+  },
+  {
+    "course": "html-css-basics",
+    "skill": "responsive",
+    "difficulty": 2,
+    "question": "Pourquoi préférer <button> à un <div> cliquable ?",
+    "options": [
+      "Le <div> ne réagit jamais aux clics lorsqu'on le surveille avec JavaScript",
+      "Le <button> se charge plus rapidement car il est plus léger pour le navigateur",
+      "Le <div> ne peut pas recevoir de style CSS alors que le <button> le peut",
+      "Le <button> est utilisable au clavier et reconnu comme bouton par les technologies d'assistance"
+    ],
+    "correct_answer": "Le <button> est utilisable au clavier et reconnu comme bouton par les technologies d'assistance",
+    "explanation": "Les éléments sémantiques apportent gratuitement focus, clavier et rôle pour les lecteurs d'écran."
+  },
+  {
+    "course": "html-css-basics",
+    "skill": "responsive",
+    "difficulty": 3,
+    "question": "Que signifie l'approche « mobile first » ?",
+    "options": [
+      "Écrire d'abord les styles pour grand écran, puis les réduire avec des media queries max-width",
+      "Masquer entièrement le site sur ordinateur pour ne l'afficher que sur mobile",
+      "Développer d'abord une application mobile native avant de créer le site web",
+      "Écrire d'abord les styles pour petits écrans, puis les enrichir avec des media queries min-width"
+    ],
+    "correct_answer": "Écrire d'abord les styles pour petits écrans, puis les enrichir avec des media queries min-width",
+    "explanation": "On part du plus simple (mobile) et on ajoute des règles quand l'écran s'élargit."
+  },
+  {
+    "course": "html-css-basics",
+    "skill": "responsive",
+    "difficulty": 3,
+    "question": "Selon les recommandations WCAG AA, quel rapport de contraste minimum faut-il pour un texte normal ?",
+    "options": [
+      "7 : 1",
+      "4,5 : 1",
+      "2 : 1",
+      "3 : 1"
+    ],
+    "correct_answer": "4,5 : 1",
+    "explanation": "AA exige 4,5 : 1 pour le texte normal (3 : 1 pour le grand texte) ; 7 : 1 correspond au niveau AAA."
+  },
+  {
+    "course": "javascript-basics",
+    "skill": "js-variables",
+    "difficulty": 1,
+    "question": "Quel mot-clé déclare une constante en JavaScript ?",
+    "options": [
+      "final",
+      "static",
+      "let",
+      "const"
+    ],
+    "correct_answer": "const",
+    "explanation": "const déclare une variable dont la référence ne peut pas être réaffectée."
+  },
+  {
+    "course": "javascript-basics",
+    "skill": "js-variables",
+    "difficulty": 1,
+    "question": "Que renvoie typeof 42 ?",
+    "options": [
+      "\"int\"",
+      "\"integer\"",
+      "\"numeric\"",
+      "\"number\""
+    ],
+    "correct_answer": "\"number\"",
+    "explanation": "JavaScript n'a qu'un type numérique : number."
+  },
+  {
+    "course": "javascript-basics",
+    "skill": "js-variables",
+    "difficulty": 2,
+    "question": "Que vaut l'expression « '5' + 3 » en JavaScript ?",
+    "options": [
+      "8",
+      "\"53\"",
+      "Une erreur",
+      "NaN"
+    ],
+    "correct_answer": "\"53\"",
+    "explanation": "Avec un texte, + concatène : le nombre 3 est converti en chaîne."
+  },
+  {
+    "course": "javascript-basics",
+    "skill": "js-variables",
+    "difficulty": 2,
+    "question": "Que renvoie « 5 === '5' » ?",
+    "options": [
+      "true",
+      "Une erreur",
+      "false",
+      "undefined"
+    ],
+    "correct_answer": "false",
+    "explanation": "=== compare la valeur ET le type : un nombre n'est pas égal à une chaîne."
+  },
+  {
+    "course": "javascript-basics",
+    "skill": "js-variables",
+    "difficulty": 2,
+    "question": "Quelle déclaration est valide et permet de réaffecter la variable plus tard ?",
+    "options": [
+      "const compteur = 0; compteur = 1;",
+      "int compteur = 0;",
+      "let compteur = 0; compteur = 1;",
+      "constant compteur = 0;"
+    ],
+    "correct_answer": "let compteur = 0; compteur = 1;",
+    "explanation": "let autorise la réaffectation ; const la refuse (TypeError)."
+  },
+  {
+    "course": "javascript-basics",
+    "skill": "js-variables",
+    "difficulty": 3,
+    "question": "Que s'affiche avec ce code ?\nconsole.log(typeof null);",
+    "options": [
+      "object",
+      "null",
+      "number",
+      "undefined"
+    ],
+    "correct_answer": "object",
+    "explanation": "C'est une particularité historique du langage : typeof null renvoie \"object\"."
+  },
+  {
+    "course": "javascript-basics",
+    "skill": "js-variables",
+    "difficulty": 3,
+    "question": "Que s'affiche avec ce code ?\nconsole.log(a);\nvar a = 5;",
+    "options": [
+      "ReferenceError",
+      "null",
+      "undefined",
+      "5"
+    ],
+    "correct_answer": "undefined",
+    "explanation": "var est « hissée » : la déclaration existe dès le début, mais sa valeur 5 n'est affectée qu'à la ligne suivante."
+  },
+  {
+    "course": "javascript-basics",
+    "skill": "js-functions",
+    "difficulty": 1,
+    "question": "Quel mot-clé déclare une fonction en JavaScript ?",
+    "options": [
+      "func",
+      "def",
+      "function",
+      "method"
+    ],
+    "correct_answer": "function",
+    "explanation": "On écrit function nom() { ... } ou on utilise une fonction fléchée."
+  },
+  {
+    "course": "javascript-basics",
+    "skill": "js-functions",
+    "difficulty": 1,
+    "question": "Quelle instruction renvoie une valeur depuis une fonction ?",
+    "options": [
+      "send",
+      "output",
+      "return",
+      "exit"
+    ],
+    "correct_answer": "return",
+    "explanation": "return termine la fonction et renvoie la valeur à l'appelant."
+  },
+  {
+    "course": "javascript-basics",
+    "skill": "js-functions",
+    "difficulty": 2,
+    "question": "Quelle fonction fléchée est équivalente à « function double(x) { return x * 2; } » ?",
+    "options": [
+      "const double = (x) => x * 2;",
+      "double = function => x * 2;",
+      "const double => (x) x * 2;",
+      "const double = x -> x * 2;"
+    ],
+    "correct_answer": "const double = (x) => x * 2;",
+    "explanation": "La syntaxe est (paramètres) => expression ; le return est implicite avec une expression."
+  },
+  {
+    "course": "javascript-basics",
+    "skill": "js-functions",
+    "difficulty": 2,
+    "question": "Que s'affiche avec ce code ?\nfunction saluer(nom = 'ami') { return 'Salut ' + nom; }\nconsole.log(saluer());",
+    "options": [
+      "Une erreur",
+      "Salut",
+      "Salut undefined",
+      "Salut ami"
+    ],
+    "correct_answer": "Salut ami",
+    "explanation": "Si l'argument n'est pas fourni, la valeur par défaut 'ami' est utilisée."
+  },
+  {
+    "course": "javascript-basics",
+    "skill": "js-functions",
+    "difficulty": 2,
+    "question": "Que s'affiche avec ce code ?\nfunction f() { console.log('a'); }\nconst r = f();\nconsole.log(r);",
+    "options": [
+      "a seulement",
+      "a puis null",
+      "undefined puis a",
+      "a puis undefined"
+    ],
+    "correct_answer": "a puis undefined",
+    "explanation": "Une fonction sans return renvoie undefined."
+  },
+  {
+    "course": "javascript-basics",
+    "skill": "js-functions",
+    "difficulty": 3,
+    "question": "Que s'affiche avec ce code ?\nfunction creer() {\n  let n = 0;\n  return () => ++n;\n}\nconst c = creer();\nc();\nconsole.log(c());",
+    "options": [
+      "undefined",
+      "2",
+      "0",
+      "1"
+    ],
+    "correct_answer": "2",
+    "explanation": "C'est une fermeture (closure) : la fonction retournée conserve la variable n entre les appels."
+  },
+  {
+    "course": "javascript-basics",
+    "skill": "js-functions",
+    "difficulty": 3,
+    "question": "Que s'affiche avec ce code ?\nconsole.log(somme(2, 3));\nfunction somme(a, b) { return a + b; }",
+    "options": [
+      "ReferenceError",
+      "undefined",
+      "5",
+      "NaN"
+    ],
+    "correct_answer": "5",
+    "explanation": "Les déclarations de fonction sont hissées : on peut les appeler avant leur définition."
+  },
+  {
+    "course": "javascript-basics",
+    "skill": "js-arrays-objects",
+    "difficulty": 1,
+    "question": "Quelle méthode ajoute un élément à la fin d'un tableau ?",
+    "options": [
+      "pop()",
+      "shift()",
+      "unshift()",
+      "push()"
+    ],
+    "correct_answer": "push()",
+    "explanation": "push ajoute à la fin ; unshift ajoute au début ; pop et shift retirent."
+  },
+  {
+    "course": "javascript-basics",
+    "skill": "js-arrays-objects",
+    "difficulty": 1,
+    "question": "Comment accède-t-on au premier élément du tableau t ?",
+    "options": [
+      "t[0]",
+      "t(0)",
+      "t[1]",
+      "t.first"
+    ],
+    "correct_answer": "t[0]",
+    "explanation": "Les indices des tableaux commencent à 0."
+  },
+  {
+    "course": "javascript-basics",
+    "skill": "js-arrays-objects",
+    "difficulty": 2,
+    "question": "Que renvoie « [1, 2, 3].map(x => x * 2) » ?",
+    "options": [
+      "12",
+      "[2, 4, 6]",
+      "[1, 2, 3]",
+      "[2, 3, 4]"
+    ],
+    "correct_answer": "[2, 4, 6]",
+    "explanation": "map applique la fonction à chaque élément et renvoie un nouveau tableau."
+  },
+  {
+    "course": "javascript-basics",
+    "skill": "js-arrays-objects",
+    "difficulty": 2,
+    "question": "Que renvoie « [5, 8, 12].filter(n => n > 6) » ?",
+    "options": [
+      "[5, 8, 12]",
+      "[8, 12]",
+      "true",
+      "[5]"
+    ],
+    "correct_answer": "[8, 12]",
+    "explanation": "filter garde les éléments pour lesquels la fonction renvoie true."
+  },
+  {
+    "course": "javascript-basics",
+    "skill": "js-arrays-objects",
+    "difficulty": 2,
+    "question": "Que renvoie « Object.keys({ a: 1, b: 2 }) » ?",
+    "options": [
+      "[\"a\", \"b\"]",
+      "[\"a:1\", \"b:2\"]",
+      "[1, 2]",
+      "2"
+    ],
+    "correct_answer": "[\"a\", \"b\"]",
+    "explanation": "Object.keys renvoie le tableau des noms de propriétés de l'objet."
+  },
+  {
+    "course": "javascript-basics",
+    "skill": "js-arrays-objects",
+    "difficulty": 3,
+    "question": "Que s'affiche avec ce code ?\nconst a = [1, 2, 3];\nconst b = a;\nb.push(4);\nconsole.log(a.length);",
+    "options": [
+      "3",
+      "1",
+      "undefined",
+      "4"
+    ],
+    "correct_answer": "4",
+    "explanation": "b et a désignent le même tableau (copie de la référence) : la modification via b se voit dans a."
+  },
+  {
+    "course": "javascript-basics",
+    "skill": "js-arrays-objects",
+    "difficulty": 3,
+    "question": "Que s'affiche avec ce code ?\nconst o = { a: 1 };\nconst copie = { ...o, b: 2 };\nconsole.log(o.b);",
+    "options": [
+      "null",
+      "Une erreur",
+      "undefined",
+      "2"
+    ],
+    "correct_answer": "undefined",
+    "explanation": "L'opérateur de décomposition crée un nouvel objet : l'objet d'origine n'est pas modifié."
+  },
+  {
+    "course": "javascript-basics",
+    "skill": "js-dom-events",
+    "difficulty": 1,
+    "question": "Quelle instruction sélectionne un élément à partir de son identifiant ?",
+    "options": [
+      "document.id(\"id\")",
+      "document.getElementById(\"id\")",
+      "document.getElement(\"id\")",
+      "document.findById(\"id\")"
+    ],
+    "correct_answer": "document.getElementById(\"id\")",
+    "explanation": "getElementById renvoie l'élément portant cet identifiant (ou null)."
+  },
+  {
+    "course": "javascript-basics",
+    "skill": "js-dom-events",
+    "difficulty": 1,
+    "question": "Quel événement se déclenche quand l'utilisateur clique sur un élément ?",
+    "options": [
+      "tap",
+      "click",
+      "select",
+      "press"
+    ],
+    "correct_answer": "click",
+    "explanation": "L'événement click est émis lors d'un clic de souris ou d'une activation au clavier."
+  },
+  {
+    "course": "javascript-basics",
+    "skill": "js-dom-events",
+    "difficulty": 2,
+    "question": "Quelle écriture ajoute un gestionnaire de clic à un bouton btn ?",
+    "options": [
+      "btn.onClick(afficher);",
+      "btn.listen('click', afficher);",
+      "btn.addEvent('click', afficher());",
+      "btn.addEventListener('click', afficher);"
+    ],
+    "correct_answer": "btn.addEventListener('click', afficher);",
+    "explanation": "addEventListener prend le type d'événement et la fonction (sans parenthèses, sinon elle est appelée tout de suite)."
+  },
+  {
+    "course": "javascript-basics",
+    "skill": "js-dom-events",
+    "difficulty": 2,
+    "question": "Quelle propriété change le texte d'un élément sans interpréter le HTML ?",
+    "options": [
+      "value",
+      "innerHTML",
+      "textContent",
+      "outerHTML"
+    ],
+    "correct_answer": "textContent",
+    "explanation": "textContent insère du texte brut ; innerHTML interprète le HTML, ce qui peut ouvrir une faille XSS."
+  },
+  {
+    "course": "javascript-basics",
+    "skill": "js-dom-events",
+    "difficulty": 2,
+    "question": "Que renvoie « document.querySelector('.carte') » ?",
+    "options": [
+      "Le nombre d'éléments de classe carte",
+      "Tous les éléments ayant la classe carte",
+      "Le premier élément ayant la classe carte",
+      "Un nouvel élément de classe carte"
+    ],
+    "correct_answer": "Le premier élément ayant la classe carte",
+    "explanation": "querySelector renvoie le premier élément qui correspond ; querySelectorAll renvoie tous les éléments."
+  },
+  {
+    "course": "javascript-basics",
+    "skill": "js-dom-events",
+    "difficulty": 3,
+    "question": "Que fait event.preventDefault() dans un gestionnaire de l'événement submit d'un formulaire ?",
+    "options": [
+      "Il empêche l'envoi et le rechargement de page par défaut du navigateur",
+      "Il désactive JavaScript sur la page",
+      "Il empêche l'événement de remonter aux éléments parents",
+      "Il supprime le formulaire du DOM"
+    ],
+    "correct_answer": "Il empêche l'envoi et le rechargement de page par défaut du navigateur",
+    "explanation": "preventDefault annule le comportement par défaut ; stopPropagation arrête la propagation."
+  },
+  {
+    "course": "javascript-basics",
+    "skill": "js-dom-events",
+    "difficulty": 3,
+    "question": "Quel est l'intérêt de la délégation d'événements ?",
+    "options": [
+      "Empêcher les clics sur les éléments enfants en interceptant l'événement sur le parent",
+      "Accélérer le chargement des images en déléguant leur téléchargement à un autre serveur",
+      "Placer un seul écouteur sur un parent pour gérer les clics de ses enfants, y compris ceux ajoutés plus tard",
+      "Remplacer les feuilles de style CSS par des écouteurs d'événements JavaScript"
+    ],
+    "correct_answer": "Placer un seul écouteur sur un parent pour gérer les clics de ses enfants, y compris ceux ajoutés plus tard",
+    "explanation": "Les événements remontent (bubbling) : le parent peut les intercepter via event.target."
+  },
+  {
+    "course": "ml-basics",
+    "skill": "ml-concepts",
+    "difficulty": 1,
+    "question": "Qu'est-ce que l'apprentissage supervisé ?",
+    "options": [
+      "Apprendre par essais et récompenses en interagissant avec un environnement",
+      "Apprendre à partir de données sans étiquette, en découvrant seul des structures cachées",
+      "Apprendre à partir d'un modèle surveillé en permanence par un humain en production",
+      "Apprendre à partir d'exemples dont la réponse attendue (étiquette) est connue"
+    ],
+    "correct_answer": "Apprendre à partir d'exemples dont la réponse attendue (étiquette) est connue",
+    "explanation": "En supervisé, chaque exemple d'entraînement est associé à la bonne réponse."
+  },
+  {
+    "course": "ml-basics",
+    "skill": "ml-concepts",
+    "difficulty": 1,
+    "question": "Laquelle de ces tâches est un problème de classification ?",
+    "options": [
+      "Prédire le chiffre d'affaires du mois",
+      "Prédire le prix d'une maison",
+      "Prédire la température de demain",
+      "Prédire si un e-mail est un spam ou non"
+    ],
+    "correct_answer": "Prédire si un e-mail est un spam ou non",
+    "explanation": "La classification prédit une catégorie ; les trois autres prédisent un nombre (régression)."
+  },
+  {
+    "course": "ml-basics",
+    "skill": "ml-concepts",
+    "difficulty": 2,
+    "question": "Quelle tâche relève de l'apprentissage non supervisé ?",
+    "options": [
+      "Prédire si un client va résilier à partir d'historiques étiquetés",
+      "Regrouper des clients en segments sans catégories prédéfinies",
+      "Reconnaître des chiffres manuscrits à partir d'images étiquetées",
+      "Prédire le prix d'un logement à partir de ses caractéristiques"
+    ],
+    "correct_answer": "Regrouper des clients en segments sans catégories prédéfinies",
+    "explanation": "Le clustering découvre des groupes sans étiquettes connues."
+  },
+  {
+    "course": "ml-basics",
+    "skill": "ml-concepts",
+    "difficulty": 2,
+    "question": "Quelle est la différence entre régression et classification ?",
+    "options": [
+      "La régression prédit une catégorie, la classification une valeur numérique",
+      "Il n'y a aucune différence",
+      "La régression prédit une valeur numérique continue, la classification prédit une catégorie",
+      "La régression est toujours non supervisée"
+    ],
+    "correct_answer": "La régression prédit une valeur numérique continue, la classification prédit une catégorie",
+    "explanation": "Prix, température : régression. Spam ou non, espèce d'une fleur : classification."
+  },
+  {
+    "course": "ml-basics",
+    "skill": "ml-concepts",
+    "difficulty": 2,
+    "question": "Quelle affirmation décrit correctement le lien entre IA, machine learning et deep learning ?",
+    "options": [
+      "Le deep learning est un sous-ensemble du machine learning, lui-même un sous-ensemble de l'IA",
+      "Le machine learning est un sous-ensemble du deep learning, lui-même un sous-ensemble de l'IA",
+      "L'intelligence artificielle est un sous-ensemble du deep learning, lui-même inclus dans le machine learning",
+      "Ces trois termes désignent exactement la même technique, appelée différemment selon les époques"
+    ],
+    "correct_answer": "Le deep learning est un sous-ensemble du machine learning, lui-même un sous-ensemble de l'IA",
+    "explanation": "Du plus large au plus précis : IA, puis machine learning, puis deep learning (réseaux de neurones profonds)."
+  },
+  {
+    "course": "ml-basics",
+    "skill": "ml-concepts",
+    "difficulty": 3,
+    "question": "Un agent apprend en essayant des actions et en recevant des récompenses ou des pénalités. De quel type d'apprentissage s'agit-il ?",
+    "options": [
+      "La régression linéaire",
+      "L'apprentissage supervisé",
+      "L'apprentissage non supervisé",
+      "L'apprentissage par renforcement"
+    ],
+    "correct_answer": "L'apprentissage par renforcement",
+    "explanation": "Le renforcement optimise une série de décisions pour maximiser une récompense cumulée."
+  },
+  {
+    "course": "ml-basics",
+    "skill": "ml-concepts",
+    "difficulty": 3,
+    "question": "Qu'est-ce qu'un hyperparamètre ?",
+    "options": [
+      "Le résultat chiffré produit par le modèle pour chaque exemple du jeu de test",
+      "Un réglage fixé avant l'entraînement (ex. le taux d'apprentissage), non appris par le modèle",
+      "Une variable d'entrée des données qui a une très forte influence sur la prédiction",
+      "Un coefficient ajusté automatiquement à chaque itération par la descente de gradient"
+    ],
+    "correct_answer": "Un réglage fixé avant l'entraînement (ex. le taux d'apprentissage), non appris par le modèle",
+    "explanation": "Les paramètres (poids) sont appris ; les hyperparamètres sont choisis par le développeur."
+  },
+  {
+    "course": "ml-basics",
+    "skill": "data-preparation",
+    "difficulty": 1,
+    "question": "Pourquoi sépare-t-on les données en jeu d'entraînement et jeu de test ?",
+    "options": [
+      "Pour multiplier par deux la quantité de données disponibles afin d'améliorer le modèle",
+      "Pour supprimer automatiquement les valeurs manquantes et les doublons du jeu de données",
+      "Pour accélérer l'entraînement en réduisant le nombre de lignes traitées à chaque itération",
+      "Pour évaluer le modèle sur des données qu'il n'a pas vues pendant l'entraînement"
+    ],
+    "correct_answer": "Pour évaluer le modèle sur des données qu'il n'a pas vues pendant l'entraînement",
+    "explanation": "Évaluer sur les données d'entraînement donnerait une image trop optimiste de la performance."
+  },
+  {
+    "course": "ml-basics",
+    "skill": "data-preparation",
+    "difficulty": 1,
+    "question": "Que signifie « nettoyer les données » ?",
+    "options": [
+      "Chiffrer les données pour protéger la confidentialité des personnes concernées",
+      "Corriger ou supprimer les erreurs, doublons, valeurs aberrantes ou manquantes",
+      "Lancer l'entraînement du modèle et mesurer sa performance sur les données",
+      "Ajouter de nouvelles colonnes pour enrichir les informations de chaque exemple"
+    ],
+    "correct_answer": "Corriger ou supprimer les erreurs, doublons, valeurs aberrantes ou manquantes",
+    "explanation": "Un modèle apprend ce qu'on lui donne : des données de mauvaise qualité donnent un mauvais modèle."
+  },
+  {
+    "course": "ml-basics",
+    "skill": "data-preparation",
+    "difficulty": 2,
+    "question": "Comment préparer une variable catégorielle comme « couleur » (rouge, vert, bleu) pour un modèle ?",
+    "options": [
+      "L'encoder, par exemple avec un encodage one-hot",
+      "La multiplier par 10 pour qu'elle pèse autant que les variables numériques",
+      "La supprimer systématiquement du jeu de données avant l'entraînement du modèle",
+      "La laisser sous forme de texte, car tous les modèles savent interpréter directement les mots"
+    ],
+    "correct_answer": "L'encoder, par exemple avec un encodage one-hot",
+    "explanation": "La plupart des modèles attendent des nombres : le one-hot crée une colonne 0/1 par catégorie."
+  },
+  {
+    "course": "ml-basics",
+    "skill": "data-preparation",
+    "difficulty": 2,
+    "question": "Pourquoi normaliser ou standardiser des variables de grandeurs très différentes (âge et salaire) ?",
+    "options": [
+      "Pour augmenter le nombre d'exemples disponibles sans collecter de nouvelles données",
+      "Pour que les variables de grande amplitude ne dominent pas l'apprentissage",
+      "Pour supprimer les doublons et réduire la taille du fichier de données",
+      "Pour convertir les nombres en texte afin qu'ils soient traités comme des catégories"
+    ],
+    "correct_answer": "Pour que les variables de grande amplitude ne dominent pas l'apprentissage",
+    "explanation": "Mettre les variables à une échelle comparable aide de nombreux algorithmes (distances, descente de gradient)."
+  },
+  {
+    "course": "ml-basics",
+    "skill": "data-preparation",
+    "difficulty": 2,
+    "question": "Une colonne contient 3 % de valeurs manquantes. Quelle option est raisonnable ?",
+    "options": [
+      "Supprimer obligatoirement toute la colonne",
+      "Les remplacer par la médiane ou la moyenne (imputation)",
+      "Les remplacer par 999999 sans réfléchir",
+      "Les laisser telles quelles car tous les modèles les gèrent"
+    ],
+    "correct_answer": "Les remplacer par la médiane ou la moyenne (imputation)",
+    "explanation": "L'imputation conserve les lignes ; il faut choisir une méthode adaptée à la variable."
+  },
+  {
+    "course": "ml-basics",
+    "skill": "data-preparation",
+    "difficulty": 3,
+    "question": "Qu'est-ce que la fuite de données (data leakage) ?",
+    "options": [
+      "Des données personnelles sont volées par un tiers à la suite d'une attaque informatique",
+      "Le jeu de données est trop petit pour que le modèle puisse apprendre quoi que ce soit",
+      "Des informations du jeu de test ou de la cible se retrouvent dans l'entraînement et faussent l'évaluation",
+      "Trop de colonnes sont supprimées pendant le nettoyage et le modèle perd de l'information"
+    ],
+    "correct_answer": "Des informations du jeu de test ou de la cible se retrouvent dans l'entraînement et faussent l'évaluation",
+    "explanation": "Une fuite donne des scores excellents en évaluation mais des résultats décevants en production."
+  },
+  {
+    "course": "ml-basics",
+    "skill": "data-preparation",
+    "difficulty": 3,
+    "question": "Pour standardiser sans fuite de données, que faut-il faire ?",
+    "options": [
+      "Calculer la moyenne et l'écart-type séparément sur le jeu de test, puis les appliquer au test",
+      "Standardiser d'abord tout le jeu de données, puis le séparer en jeux d'entraînement et de test",
+      "Séparer train et test, calculer moyenne et écart-type sur le train, puis les appliquer au train et au test",
+      "Standardiser uniquement le jeu de test, car le jeu d'entraînement est déjà propre"
+    ],
+    "correct_answer": "Séparer train et test, calculer moyenne et écart-type sur le train, puis les appliquer au train et au test",
+    "explanation": "Les statistiques de transformation doivent venir uniquement des données d'entraînement."
+  },
+  {
+    "course": "ml-basics",
+    "skill": "model-evaluation",
+    "difficulty": 1,
+    "question": "Quelle métrique mesure la proportion de prédictions correctes ?",
+    "options": [
+      "L'erreur quadratique moyenne",
+      "L'exactitude (accuracy)",
+      "Le rappel (recall)",
+      "Le taux d'apprentissage"
+    ],
+    "correct_answer": "L'exactitude (accuracy)",
+    "explanation": "exactitude = prédictions correctes / total des prédictions."
+  },
+  {
+    "course": "ml-basics",
+    "skill": "model-evaluation",
+    "difficulty": 1,
+    "question": "Qu'est-ce qu'une matrice de confusion ?",
+    "options": [
+      "Un tableau comparant les classes prédites et les classes réelles",
+      "Un graphique montrant l'évolution de la perte au fil des itérations d'entraînement",
+      "Une liste des hyperparamètres testés avec le score obtenu pour chacun",
+      "Un algorithme qui regroupe les exemples similaires sans utiliser d'étiquettes"
+    ],
+    "correct_answer": "Un tableau comparant les classes prédites et les classes réelles",
+    "explanation": "Elle compte les vrais positifs, faux positifs, vrais négatifs et faux négatifs."
+  },
+  {
+    "course": "ml-basics",
+    "skill": "model-evaluation",
+    "difficulty": 2,
+    "question": "Un modèle signale 100 e-mails comme spam. Parmi eux, 80 sont réellement des spams. Quelle est sa précision (precision) ?",
+    "options": [
+      "8 %",
+      "80 %",
+      "20 %",
+      "100 %"
+    ],
+    "correct_answer": "80 %",
+    "explanation": "précision = vrais positifs / tout ce qui est prédit positif = 80 / 100."
+  },
+  {
+    "course": "ml-basics",
+    "skill": "model-evaluation",
+    "difficulty": 2,
+    "question": "Que mesure le rappel (recall) ?",
+    "options": [
+      "La proportion de toutes les prédictions correctes",
+      "La vitesse de prédiction",
+      "La proportion des cas réellement positifs que le modèle a retrouvés",
+      "La proportion de prédictions positives qui sont correctes"
+    ],
+    "correct_answer": "La proportion des cas réellement positifs que le modèle a retrouvés",
+    "explanation": "rappel = vrais positifs / (vrais positifs + faux négatifs)."
+  },
+  {
+    "course": "ml-basics",
+    "skill": "model-evaluation",
+    "difficulty": 2,
+    "question": "Pour évaluer un modèle qui prédit le prix d'un appartement, quelle métrique convient ?",
+    "options": [
+      "L'erreur absolue moyenne (MAE)",
+      "Le rappel",
+      "La précision (precision)",
+      "La matrice de confusion"
+    ],
+    "correct_answer": "L'erreur absolue moyenne (MAE)",
+    "explanation": "Prédire un nombre est une régression : on mesure l'écart moyen entre prédictions et valeurs réelles."
+  },
+  {
+    "course": "ml-basics",
+    "skill": "model-evaluation",
+    "difficulty": 3,
+    "question": "Une maladie touche 1 % de la population. Un modèle qui répond toujours « sain » a quelle exactitude, et pourquoi est-ce trompeur ?",
+    "options": [
+      "50 %, car il y a seulement deux classes possibles et il choisit toujours la même",
+      "99 %, mais il ne détecte aucun malade (rappel de 0)",
+      "99 %, ce qui prouve que c'est un excellent modèle à déployer en pratique",
+      "1 %, car il se trompe à chaque fois qu'un patient est réellement malade"
+    ],
+    "correct_answer": "99 %, mais il ne détecte aucun malade (rappel de 0)",
+    "explanation": "Avec des classes déséquilibrées, l'exactitude seule est trompeuse : il faut regarder précision et rappel."
+  },
+  {
+    "course": "ml-basics",
+    "skill": "model-evaluation",
+    "difficulty": 3,
+    "question": "Quel est l'intérêt du score F1 ?",
+    "options": [
+      "Il compte le nombre d'exemples d'entraînement utilisés pour chaque classe",
+      "Il combine précision et rappel en une seule valeur (moyenne harmonique)",
+      "Il mesure la vitesse à laquelle le modèle converge pendant l'entraînement",
+      "Il remplace la matrice de confusion pour évaluer les modèles de régression"
+    ],
+    "correct_answer": "Il combine précision et rappel en une seule valeur (moyenne harmonique)",
+    "explanation": "Le F1 est élevé seulement si la précision ET le rappel sont bons."
+  },
+  {
+    "course": "ml-basics",
+    "skill": "overfitting",
+    "difficulty": 1,
+    "question": "Qu'est-ce que le surapprentissage (overfitting) ?",
+    "options": [
+      "Le modèle est trop simple pour capturer les tendances présentes dans les données",
+      "Le modèle apprend plus vite que prévu et termine son entraînement trop tôt",
+      "Le modèle mémorise le jeu d'entraînement et généralise mal à de nouvelles données",
+      "Le jeu de test contient trop d'exemples par rapport au jeu d'entraînement"
+    ],
+    "correct_answer": "Le modèle mémorise le jeu d'entraînement et généralise mal à de nouvelles données",
+    "explanation": "Un modèle surappris est excellent sur ses données d'entraînement mais mauvais sur des données nouvelles."
+  },
+  {
+    "course": "ml-basics",
+    "skill": "overfitting",
+    "difficulty": 1,
+    "question": "Qu'est-ce que le sous-apprentissage (underfitting) ?",
+    "options": [
+      "Le modèle performe très bien à l'entraînement mais très mal sur de nouvelles données",
+      "Le modèle est trop simple et performe mal, même sur les données d'entraînement",
+      "Le modèle a été entraîné avec trop de données pour sa capacité de calcul",
+      "Le modèle n'a pas été sauvegardé correctement à la fin de l'entraînement"
+    ],
+    "correct_answer": "Le modèle est trop simple et performe mal, même sur les données d'entraînement",
+    "explanation": "Un modèle sous-appris n'a pas capturé les tendances des données."
+  },
+  {
+    "course": "ml-basics",
+    "skill": "overfitting",
+    "difficulty": 2,
+    "question": "Un modèle atteint 99 % d'exactitude à l'entraînement et 70 % sur le test. Quel est le diagnostic le plus probable ?",
+    "options": [
+      "Des données manquantes",
+      "Surapprentissage",
+      "Sous-apprentissage",
+      "Le modèle généralise parfaitement"
+    ],
+    "correct_answer": "Surapprentissage",
+    "explanation": "Un grand écart entre entraînement et test est le signe typique du surapprentissage."
+  },
+  {
+    "course": "ml-basics",
+    "skill": "overfitting",
+    "difficulty": 2,
+    "question": "Laquelle de ces actions aide à réduire le surapprentissage ?",
+    "options": [
+      "Augmenter fortement la complexité du modèle",
+      "Entraîner beaucoup plus longtemps sans surveillance",
+      "Évaluer uniquement sur le jeu d'entraînement",
+      "Ajouter davantage de données d'entraînement"
+    ],
+    "correct_answer": "Ajouter davantage de données d'entraînement",
+    "explanation": "Plus de données variées rendent la mémorisation plus difficile et la généralisation meilleure."
+  },
+  {
+    "course": "ml-basics",
+    "skill": "overfitting",
+    "difficulty": 2,
+    "question": "À quoi sert un jeu de validation ?",
+    "options": [
+      "À augmenter artificiellement la quantité de données d'entraînement disponibles",
+      "À remplacer le jeu de test lorsque celui-ci n'est pas assez grand",
+      "À régler les hyperparamètres et comparer des modèles avant l'évaluation finale",
+      "À stocker les prédictions du modèle pour les réutiliser plus tard en production"
+    ],
+    "correct_answer": "À régler les hyperparamètres et comparer des modèles avant l'évaluation finale",
+    "explanation": "Le jeu de test reste réservé à l'évaluation finale ; la validation sert aux choix intermédiaires."
+  },
+  {
+    "course": "ml-basics",
+    "skill": "overfitting",
+    "difficulty": 3,
+    "question": "Quel est le principe de la régularisation (L1/L2) ?",
+    "options": [
+      "Ajouter des données artificielles au jeu de test pour rendre l'évaluation plus sévère",
+      "Pénaliser les poids trop grands pour limiter la complexité du modèle",
+      "Supprimer le jeu de test pour que le modèle voie davantage d'exemples",
+      "Augmenter la taille du modèle pour qu'il mémorise mieux les exemples"
+    ],
+    "correct_answer": "Pénaliser les poids trop grands pour limiter la complexité du modèle",
+    "explanation": "Le terme de pénalité ajouté à la perte décourage les modèles trop complexes."
+  },
+  {
+    "course": "ml-basics",
+    "skill": "overfitting",
+    "difficulty": 3,
+    "question": "Quel est le principe de l'arrêt précoce (early stopping) ?",
+    "options": [
+      "Arrêter l'entraînement après un nombre fixe de 10 itérations, quel que soit le résultat",
+      "Arrêter l'entraînement quand tous les exemples du jeu de test ont été utilisés",
+      "Arrêter l'entraînement dès que l'erreur sur le jeu d'entraînement atteint zéro",
+      "Arrêter l'entraînement quand l'erreur sur le jeu de validation cesse de diminuer"
+    ],
+    "correct_answer": "Arrêter l'entraînement quand l'erreur sur le jeu de validation cesse de diminuer",
+    "explanation": "Quand l'erreur de validation remonte, le modèle commence à surapprendre : on s'arrête avant."
   }
 ]
