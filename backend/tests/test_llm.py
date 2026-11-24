@@ -206,13 +206,25 @@ def test_cours_deja_complet_aucun_appel_au_llm(seeded_db, web_course):
     assert len(generator.calls) == 1
 
 
-def test_seul_le_manque_est_demande_au_llm(seeded_db):
-    """La banque de Python a 2 / 3 / 2 questions par compétence : il manque 1 question moyenne."""
+def test_banque_suffisante_rien_n_est_demande_au_llm(seeded_db):
+    """Python a 2 / 3 / 2 questions par compétence : le LLM n'intervient pas sur un cours relu."""
     course = seeded_db.scalar(select(Course).where(Course.code == "python-basics"))
-    jobs = missing_questions(seeded_db, course)
+    assert missing_questions(seeded_db, course) == []
 
-    assert len(jobs) == 4
-    assert all(wanted == {2: 1} for _, _, wanted in jobs)
+
+def test_seul_le_manque_est_demande_au_llm(seeded_db):
+    """Si une compétence perd des questions, on ne redemande que celles qui manquent."""
+    course = seeded_db.scalar(select(Course).where(Course.code == "python-basics"))
+    skill = course.skills[0]
+    seeded_db.execute(
+        BankQuestion.__table__.update()
+        .where(BankQuestion.skill_id == skill.id, BankQuestion.difficulty == 3)
+        .values(review_status=ReviewStatus.RETIRED)
+    )
+    seeded_db.commit()
+
+    jobs = missing_questions(seeded_db, course)
+    assert jobs == [(skill.id, skill.name, {3: 2})]
 
 
 def test_llm_en_panne_rien_n_est_ajoute_et_pas_d_erreur(seeded_db, web_course):

@@ -2,7 +2,7 @@
 Alimentation de la banque de questions par le LLM.
 
 Principe « banque d'abord » : les tests sont toujours construits à partir de la banque.
-Quand une compétence n'a pas assez de questions, on demande au LLM de compléter la banque UNE fois ;
+Quand une compétence n'a pas assez de questions (nouveau cours sans banque), on demande au LLM de la compléter UNE fois ;
 les étudiants suivants réutilisent ces questions (rapide, économique, résultats comparables).
 Si le LLM échoue, rien n'est perdu : on continue avec ce que la banque contient déjà.
 """
@@ -22,11 +22,13 @@ from app.services.question_bank import add_questions
 
 logger = logging.getLogger(__name__)
 
-# Taille visée de la banque PAR COMPÉTENCE (le test en pioche 4 : 1 facile, 2 moyennes, 1 difficile).
-# Deux fois plus que nécessaire, pour que deux tentatives successives ne se ressemblent pas.
+# Taille MINIMALE de la banque PAR COMPÉTENCE pour composer un test (1 facile + 2 moyennes + 1 difficile
+# par test, avec de la marge pour que deux tentatives ne se ressemblent pas). Les cours dont la banque
+# écrite à l'avance atteint ce seuil n'appellent jamais le LLM : leurs questions relues par l'équipe
+# ne sont pas mélangées à des questions générées automatiquement.
 BANK_TARGET_PER_DIFFICULTY: dict[int, int] = {
     Difficulty.EASY: 2,
-    Difficulty.MEDIUM: 4,
+    Difficulty.MEDIUM: 3,
     Difficulty.HARD: 2,
 }
 

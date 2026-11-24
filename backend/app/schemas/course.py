@@ -1,4 +1,5 @@
 from app.schemas.base import ORMModel
+from app.schemas.domain import DomainOut
 
 
 class SkillOut(ORMModel):
@@ -13,3 +14,10 @@ class CourseOut(ORMModel):
     code: str
     title: str
     description: str | None = None
+
+
+class CourseListItem(CourseOut):
+    """Cours tel qu'affiché dans le catalogue : avec son domaine et ses compétences."""
+
+    domain: DomainOut
+    skills: list[SkillOut]
