@@ -3,6 +3,7 @@ from app.models.user import User
 from app.models.domain import Domain, user_interests
 from app.models.course import Course, Skill
 from app.models.question_bank import BankQuestion, Difficulty, QuestionSource, ReviewStatus
+from app.models.learning_path import LearningPath, PathStatus, PathStep, StepStatus
 from app.models.placement import (
     GenerationSource,
     MasteryLevel,
@@ -31,4 +32,8 @@ __all__ = [
     "PlacementLevel",
     "MasteryLevel",
     "GenerationSource",
+    "LearningPath",
+    "PathStep",
+    "PathStatus",
+    "StepStatus",
 ]

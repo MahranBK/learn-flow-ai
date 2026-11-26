@@ -5,7 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.db.database import init_db
 
-from app.routers import auth, courses, domains, placement
+from app.routers import auth, courses, domains, placement, learning_path, skill_detail
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -27,6 +27,9 @@ app.include_router(auth.router)
 app.include_router(domains.router)
 app.include_router(courses.router)
 app.include_router(placement.router)
+app.include_router(learning_path.router)
+app.include_router(skill_detail.router)
+
 @app.get("/health")
 def health_check():
     return {"status": "ok", "project": "Learn Flow AI"}

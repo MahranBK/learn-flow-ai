@@ -24,7 +24,7 @@ function errorMessage(data: unknown): string {
  */
 export async function apiRequest<T>(
   path: string,
-  options: { method?: "GET" | "POST" | "PUT"; body?: unknown } = {},
+  options: { method?: "GET" | "POST" | "PUT" | "PATCH"; body?: unknown } = {},
 ): Promise<ApiResult<T>> {
   const token = await getToken();
   if (!token) redirect("/login?expired=1");
