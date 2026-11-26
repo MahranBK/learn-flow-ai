@@ -6,6 +6,7 @@ import { logout } from "@/app/actions/auth";
 import { getMyInterests } from "@/lib/catalog";
 import { getCurrentUser } from "@/lib/session";
 import MyCourses, { CoursesSkeleton } from "./my-courses";
+import PathCard from "./path-card";
 
 export const metadata: Metadata = {
   title: "Tableau de bord | Learn Flow AI",
@@ -70,7 +71,8 @@ async function Dashboard() {
           </form>
         </div>
       </header>
-
+      <PathCard />
+      <h2 className="text-lg font-semibold text-zinc-900 dark:text-zinc-50">Mes cours</h2>
       {/* Les cours et tests de positionnement ne concernent que les étudiants */}
       {isStudent && <MyCourses />}
     </div>

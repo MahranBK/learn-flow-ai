@@ -4,7 +4,7 @@ import { NextResponse, type NextRequest } from "next/server";
 const SESSION_COOKIE = "access_token";
 
 // Pages réservées aux utilisateurs connectés (ajouter ici les futures pages : /test, /parcours, ...)
-const PROTECTED_ROUTES = ["/dashboard", "/onboarding", "/test", "/admin"];
+const PROTECTED_ROUTES = ["/dashboard", "/onboarding", "/test", "/parcours", "/competences", "/admin"];
 // Pages réservées aux admins
 const ADMIN_ROUTES = ["/admin"];
 // Pages inutiles si on est déjà connecté
